@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#62def8"
+    tools:context=".WeekViewActivity"
+    >
+    <Button
+        android:id="@+id/deleteCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Yes"
+        android:textSize="11sp" />
+    <Button
+        android:id="@+id/editCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="No"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/classDetailsText"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editCourse"
+        android:layout_alignEnd="@+id/editCourse"
+        android:text="Are you sure?"
+        android:textSize="15sp" />
+
+
+
+</RelativeLayout>
