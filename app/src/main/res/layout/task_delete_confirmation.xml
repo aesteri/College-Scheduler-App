@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:id="@+id/deleteTaskConfirm"
         android:text="YES"
         android:layout_centerHorizontal="true"
         android:textSize="11sp" />

@@ -22,6 +22,8 @@
             android:exported="false" />
         <activity android:name=".todoEdit"
             android:exported="false" />
+        <activity android:name=".CourseEdit"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
