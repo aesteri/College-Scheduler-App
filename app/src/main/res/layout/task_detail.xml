@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#62def8"
+    tools:context=".TodoActivity"
+    >
+    <Button
+        android:id="@+id/deleteTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="DELETE"
+        android:textSize="11sp" />
+    <Button
+        android:id="@+id/editTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="EDIT"
+        android:textSize="11sp" />
+
+    <CheckBox
+        android:id="@+id/checkboxTask"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/taskDetailsTextt"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editTask"
+        android:layout_alignEnd="@+id/editTask"
+        android:text="@string/task_details"
+        android:textSize="22sp" />
+
+
+
+
+
+</RelativeLayout>
