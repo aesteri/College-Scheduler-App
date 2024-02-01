@@ -13,14 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="Yes"
+        android:text="DELETE"
         android:textSize="11sp" />
     <Button
         android:id="@+id/editCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="No"
+        android:text="EDIT"
         android:textSize="11sp" />
 
     <TextView
@@ -30,8 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editCourse"
         android:layout_alignEnd="@+id/editCourse"
-        android:text="Are you sure?"
-        android:textSize="15sp" />
+        android:text="Class Details"
+        android:textSize="22sp" />
 
 
 
