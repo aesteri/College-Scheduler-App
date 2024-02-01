@@ -32,8 +32,8 @@ public class TodoActivity extends AppCompatActivity{
     private TextView mainTask;
 
     private boolean coursess = false;
-    private boolean duedates = true;
-    private boolean complition = false;
+    private boolean duedates = false;
+    private boolean complition = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
