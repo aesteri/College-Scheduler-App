@@ -1,19 +1,15 @@
 package com.example.myapplication;
 
-import static com.example.myapplication.R.id.sortCOMPLETE;
 import static com.example.myapplication.R.id.taskDetailsTextt;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -21,14 +17,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -39,7 +32,7 @@ public class TodoActivity extends AppCompatActivity{
     private TextView mainTask;
 
     private boolean coursess = false;
-    private boolean dudates = true;
+    private boolean duedates = true;
     private boolean complition = false;
 
     @Override
@@ -49,6 +42,8 @@ public class TodoActivity extends AppCompatActivity{
         initWidgets();
         setTaskAdapter();
 
+
+        // DELETE THIS CHRISTIN WHEN TESTING
         Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false));
         Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false));
         Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false));
@@ -64,7 +59,7 @@ public class TodoActivity extends AppCompatActivity{
     private void setTaskAdapter() {
         if (coursess) {
             sortbyCourse(Task.tasksList);
-        } else if (dudates) {
+        } else if (duedates) {
             sortbyDueDate(Task.tasksList);
         } else if (complition) {
             sortbyComplete(Task.tasksList);
@@ -267,7 +262,7 @@ public class TodoActivity extends AppCompatActivity{
         courses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dudates = false;
+                duedates = false;
                 complition = false;
                 coursess = true;
                 setTaskAdapter();
@@ -278,7 +273,7 @@ public class TodoActivity extends AppCompatActivity{
         complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dudates = false;
+                duedates = false;
                 complition = true;
                 coursess = false;
                 setTaskAdapter();
@@ -288,7 +283,7 @@ public class TodoActivity extends AppCompatActivity{
         dueDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dudates = true;
+                duedates = true;
                 complition = false;
                 coursess = false;
                 setTaskAdapter();
