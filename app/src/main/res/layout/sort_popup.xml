@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#62def8"
+    tools:context=".TodoActivity"
+    >
+    <Button
+        android:id="@+id/sortCourses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:text="BY COURSES"
+        android:textSize="11sp" />
+    <Button
+        android:id="@+id/sortDates"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="BY DUEDATE"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/sortCOMPLETE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="BY COMPLETION"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/taskDetailsTextt"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@+id/sortCOMPLETE"
+        android:layout_alignEnd="@+id/sortCOMPLETE"
+        android:text="Sort by"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+
+
+
+
+</RelativeLayout>
