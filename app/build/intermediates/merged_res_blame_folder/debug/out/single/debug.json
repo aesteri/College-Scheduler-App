@@ -20,6 +20,10 @@
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/todo_create_edit.xml"
     },
     {
+        "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_sort_popup.xml.flat",
+        "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/sort_popup.xml"
+    },
+    {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_event_cell.xml.flat",
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/event_cell.xml"
     },
@@ -116,8 +120,8 @@
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-31:/layout_sort_popup.xml.flat",
-        "source": "com.example.myapplication.app-main-33:/layout/sort_popup.xml"
+        "merged": "com.example.myapplication.app-merged_res-31:/layout_activity_todo.xml.flat",
+        "source": "com.example.myapplication.app-main-33:/layout/activity_todo.xml"
     },
     {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",

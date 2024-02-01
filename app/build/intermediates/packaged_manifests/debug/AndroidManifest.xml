@@ -40,9 +40,6 @@
             android:name="com.example.myapplication.todoEdit"
             android:exported="false" />
         <activity
-            android:name="com.example.myapplication.CourseEdit"
-            android:exported="false" />
-        <activity
             android:name="com.example.myapplication.MainActivity"
             android:exported="true" >
             <intent-filter>

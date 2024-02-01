@@ -324,4 +324,8 @@ public class TodoActivity extends AppCompatActivity{
             }
         });
     }
+
+    public void monthlyAction(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 }
