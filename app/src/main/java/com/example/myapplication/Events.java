@@ -37,6 +37,35 @@ public class Events {
         }
         return events;
     }
+
+    public static ArrayList<Events> eventsForDateandTime(LocalDate date, LocalTime time) {
+        ArrayList<Events> events = new ArrayList<>();
+        for (Events event : eventsList) {
+            int eventHour = event.timePicker.getHour();
+            int cellHour = time.getHour();
+
+            if (event.getDatePickerButton().equals(date) && eventHour == cellHour && !event.isFri()
+                    &&!event.isThur()&&!event.isWed()&&!event.isTue()&&!event.isMon()) {
+                events.add(event);
+            }
+            if (event.isFri() && eventHour == cellHour && date.getDayOfWeek().toString().equals("FRIDAY")) {
+                events.add(event);
+            }
+            if (event.isThur() && eventHour == cellHour && date.getDayOfWeek().toString().equals("THURSDAY")) {
+                events.add(event);
+            }
+            if (event.isWed() && eventHour == cellHour && date.getDayOfWeek().toString().equals("WEDNESDAY")) {
+                events.add(event);
+            }
+            if (event.isTue() && eventHour == cellHour && date.getDayOfWeek().toString().equals("TUESDAY")) {
+                events.add(event);
+            }
+            if (event.isMon() && eventHour == cellHour && date.getDayOfWeek().toString().equals("MONDAY")) {
+                events.add(event);
+            }
+        }
+        return events;
+    }
     private LocalDate datePickerButton;
     private LocalTime timePicker;
 

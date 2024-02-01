@@ -6,4 +6,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lightGray">#EEE</color>
     <color name="darkGray">#333533</color>
+    <color name="lightBlue">#86C7ED</color>
+    <color name="purple">#A066CB</color>
+    <color name="lightPurple">#F4EBFA</color>
+
 </resources>

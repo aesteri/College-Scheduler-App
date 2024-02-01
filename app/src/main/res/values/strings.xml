@@ -18,5 +18,6 @@
     <string name="sort">sort</string>
     <string name="to_do">To do</string>
     <string name="monthly">MONTHLY</string>
+    <string name="daily">DAILY</string>
     <string name="view_courses">VIEW COURSES</string>
 </resources>

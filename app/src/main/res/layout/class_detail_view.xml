@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#62def8"
+    android:background="@color/lightBlue"
     tools:context=".WeekViewActivity"
     >
     <Button
@@ -26,13 +26,15 @@
     <TextView
         android:id="@+id/classDetailsText"
         android:layout_width="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editCourse"
         android:layout_alignEnd="@+id/editCourse"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="1dp"
         android:text="Class Details"
-        android:textSize="22sp" />
-
+        android:textColor="@color/blue"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>

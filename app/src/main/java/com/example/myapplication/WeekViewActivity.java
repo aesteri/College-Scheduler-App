@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -28,7 +29,7 @@ import com.example.myapplication.R.id;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class WeekViewActivity extends AppCompatActivity implements CalenderAdapter.OnItemListener{
+public class WeekViewActivity extends AppCompatActivity implements CalenderAdapter.OnItemListener {
 
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
@@ -93,8 +94,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
     }
 
 
-
-
     private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calenderRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
@@ -119,8 +118,8 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
     @Override
     public void onItemClick(int position, LocalDate date) {
 
-           CalendarUtils.selectedDate = date;
-           setWeekView();
+        CalendarUtils.selectedDate = date;
+        setWeekView();
 
 
     }
@@ -140,8 +139,8 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Events selectedClass = dailyEvents.get(position);
-                String eventTitle = selectedClass.getEventNameET() +" - "+ CalendarUtils.timeFormattor(selectedClass.getTimePicker());
-                eventTitle += "\n" + selectedClass.getInstructorName() +" - " + selectedClass.getLocationName() +" - " + selectedClass.getSectionName();
+                String eventTitle = selectedClass.getEventNameET() + " - " + CalendarUtils.timeFormattor(selectedClass.getTimePicker());
+                eventTitle += "\n" + selectedClass.getInstructorName() + " - " + selectedClass.getLocationName() + " - " + selectedClass.getSectionName();
                 eventTitle += "\n" + (selectedClass.repeatedDays());
 
 
@@ -157,7 +156,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
                 cc.setText(eventTitle);
 
                 Button dd = popupView.findViewById(R.id.deleteCourse);
-
 
 
                 boolean focusable = true; // lets taps outside the popup also dismiss it
@@ -181,13 +179,13 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
                     public void onClick(View v) {
                         Events.eventsList.remove(selectedClass);
                         setWeekView();
-                        popupWindow.dismiss();;
+                        popupWindow.dismiss();
+                        ;
                     }
                 });
             }
         });
     }
-
 
 
     public void monthlyAction(View view) {
@@ -198,5 +196,10 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
 
     public void todoActions(View view) {
         startActivity(new Intent(this, TodoActivity.class));
+    }
+
+    public void dailyAction(View view) {
+
+        startActivity(new Intent(this, DailyViewActivity.class));
     }
 }

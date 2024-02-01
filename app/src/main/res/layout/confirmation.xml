@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#62def8"
+    android:background="@color/lightBlue"
     tools:context=".WeekViewActivity"
     >
     <Button
@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editCourse"
         android:layout_alignEnd="@+id/editCourse"
+        android:textColor = "@color/blue"
         android:text="Are you sure?"
         android:textSize="15sp" />
 
