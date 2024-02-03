@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements CalenderAdapter.O
     }
 
 
-    public void notifAction(View view) {
-        startActivity(new Intent(this, Notifications.class));
-    }
+//    public void notifAction(View view) {
+//        startActivity(new Intent(this, Notifications.class));
+//    }
 }
