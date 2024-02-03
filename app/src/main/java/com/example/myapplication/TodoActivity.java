@@ -5,6 +5,7 @@ import static com.example.myapplication.R.id.taskDetailsTextt;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,8 +34,10 @@ public class TodoActivity extends AppCompatActivity{
     private TextView mainTask;
 
     private boolean coursess = false;
-    private boolean duedates = true;
-    private boolean complition = false;
+    private boolean duedates = false;
+    private boolean complition = true;
+
+    DBTHelper DBT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +45,13 @@ public class TodoActivity extends AppCompatActivity{
         setContentView(R.layout.activity_todo);
         initWidgets();
         setTaskAdapter();
+        DBT = new DBTHelper(this);
 
 
         // DELETE THIS CHRISTIN WHEN TESTING
-        Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false));
-        Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false));
-        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false));
+        Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false, true, LocalTime.MIN));
+        Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false, true, LocalTime.MIN));
+        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false, false, LocalTime.MIN));
 
 
     }
@@ -89,6 +94,11 @@ public class TodoActivity extends AppCompatActivity{
                 if (selectedTask.isComplete()) {
                     checkBox1.setChecked(true);
                 }
+                if (selectedTask.isExam()) {
+                    checkBox1.setVisibility(checkBox.GONE);
+                } else {
+                    checkBox1.setVisibility(checkBox.VISIBLE);
+                }
                 cc.setText(descript);
                 Button edit =popupView.findViewById(R.id.editTask);
 
@@ -117,9 +127,11 @@ public class TodoActivity extends AppCompatActivity{
                         if (isChecked) {
                             selectedTask.setComplete(true);
                             setTaskAdapter();
+                            DBT.updateComplete(LoginDBActivity.currentUser, "true", selectedTask.getName(), selectedTask.getCourse());
                             popupWindow.dismiss();
                         } else {
                             selectedTask.setComplete(false);
+                            DBT.updateComplete(LoginDBActivity.currentUser, "false", selectedTask.getName(), selectedTask.getCourse());
                             setTaskAdapter();
                             popupWindow.dismiss();
                         }
@@ -160,6 +172,7 @@ public class TodoActivity extends AppCompatActivity{
                             @Override
                             public void onClick(View v) {
                                 selectedTask.setName(newCourseName.getText().toString());
+                                DBT.updateTask(LoginDBActivity.currentUser, newCourseName.getText().toString(), selectedTask.getName(), selectedTask.getCourse());
                                 setTaskAdapter();
                                 popupWindoww.dismiss();
                                 popupWindow.dismiss();
@@ -203,6 +216,8 @@ public class TodoActivity extends AppCompatActivity{
                                 @Override
                                 public void onClick(View v) {
                                     Task.tasksList.remove(selectedTask);
+                                    DBT.deleteTask(LoginDBActivity.currentUser, selectedTask.getName(), selectedTask.getCourse(),
+                                            selectedTask.getDuedate(), selectedTask.isExam());
                                     popupWindoww.dismiss();
                                     popupWindow.dismiss();;
                                     setTaskAdapter();
@@ -300,6 +315,7 @@ public class TodoActivity extends AppCompatActivity{
                 return s1.getCourse().compareToIgnoreCase(s2.getCourse());
             }
         });
+        sortbyComplete(tasksList);
     }
 
     private void sortbyDueDate(ArrayList<Task> tasksList) {
@@ -309,6 +325,7 @@ public class TodoActivity extends AppCompatActivity{
                 return s1.getDuedate().toString().compareTo(s2.getDuedate().toString());
             }
         });
+        sortbyComplete(tasksList);
     }
 
     private void sortbyComplete(ArrayList<Task> tasksList) {
