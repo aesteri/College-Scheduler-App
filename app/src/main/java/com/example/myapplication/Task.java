@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Task {
@@ -12,18 +13,22 @@ public class Task {
     private boolean complete;
 
     private boolean isExam;
+    private LocalTime time;
+    DBHelper DB;
 
     public static ArrayList<Task> tasksList = new ArrayList<>();
 
-    public Task(String name, String course, LocalDate duedate, boolean complete) {
+    public Task(String name, String course, LocalDate duedate, boolean complete, boolean exam, LocalTime time) {
         this.name = name;
         this.duedate = duedate;
+        this.time =time;
         this.course = course;
         this.complete = complete;
+        this.isExam = exam;
     }
 
     public Task(){
-        this(null,null, null, false);
+        this(null,null, null, false, false, null);
     }
 
     public boolean isExam() {
@@ -68,5 +73,8 @@ public class Task {
 
     public static void main(String[] args) {
 
+    }
+
+    public LocalTime getTime() {return time;
     }
 }

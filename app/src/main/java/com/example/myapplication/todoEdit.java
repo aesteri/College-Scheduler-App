@@ -6,6 +6,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -27,6 +28,7 @@ public class todoEdit extends AppCompatActivity {
     private LocalDate date;
     private LocalTime time;
     private Button dateButton;
+    private CheckBox isExam;
     private LocalDate DATEE;
     private Button timeButton;
     @Override
@@ -128,13 +130,18 @@ public class todoEdit extends AppCompatActivity {
         name = findViewById(R.id.taskNameET);
         location = findViewById(R.id.locationTask);
         course = findViewById(R.id.courseTask);
+        isExam = findViewById(R.id.checkboxisExam);
     }
 
     public void saveTask(View view) {
         String taskName = name.getText().toString();
         String taskLocation = location.getText().toString();
         String taskCourse = course.getText().toString();
-        Task newTask = new Task(taskName, taskCourse, DATEE, false);
+        boolean exam = false;
+        if (isExam.isChecked()) {
+            exam = true;
+        }
+        Task newTask = new Task(taskName, taskCourse, DATEE, false, exam, TIMEE);
         Task.tasksList.add(newTask);
         finish();
     }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,17 +14,7 @@
         android:theme="@style/Base.Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".EventEditActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WeekViewActivity"
-            android:exported="false" />
-        <activity android:name=".TodoActivity"
-            android:exported="false" />
-        <activity android:name=".todoEdit"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +22,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginDBActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WeekViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TodoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".todoEdit"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
+        <receiver android:name=".ReminderBroadcaster" />
     </application>
 
 </manifest>
