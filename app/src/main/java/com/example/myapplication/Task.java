@@ -15,15 +15,16 @@ public class Task {
 
     public static ArrayList<Task> tasksList = new ArrayList<>();
 
-    public Task(String name, String course, LocalDate duedate, boolean complete) {
+    public Task(String name, String course, LocalDate duedate, boolean complete, boolean exam) {
         this.name = name;
         this.duedate = duedate;
         this.course = course;
         this.complete = complete;
+        this.isExam = exam;
     }
 
     public Task(){
-        this(null,null, null, false);
+        this(null,null, null, false, false);
     }
 
     public boolean isExam() {

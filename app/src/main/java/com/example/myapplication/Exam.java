@@ -8,7 +8,7 @@ public class Exam extends Task{
     private String location;
 
     public Exam(String name, String course, LocalDate duedate, boolean complete, LocalTime time, String location){
-        super(name,course,duedate,complete);
+        super(name,course,duedate,complete, false);
         this.time = time;
         this.location = location;
     }

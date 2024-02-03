@@ -44,9 +44,9 @@ public class TodoActivity extends AppCompatActivity{
 
 
         // DELETE THIS CHRISTIN WHEN TESTING
-        Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false));
-        Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false));
-        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false));
+        Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false, true));
+        Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false, true));
+        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false, false));
 
 
     }
@@ -88,6 +88,11 @@ public class TodoActivity extends AppCompatActivity{
                 CheckBox checkBox1 = popupView.findViewById(R.id.checkboxTask);
                 if (selectedTask.isComplete()) {
                     checkBox1.setChecked(true);
+                }
+                if (selectedTask.isExam()) {
+                    checkBox1.setVisibility(checkBox.GONE);
+                } else {
+                    checkBox1.setVisibility(checkBox.VISIBLE);
                 }
                 cc.setText(descript);
                 Button edit =popupView.findViewById(R.id.editTask);
@@ -300,6 +305,7 @@ public class TodoActivity extends AppCompatActivity{
                 return s1.getCourse().compareToIgnoreCase(s2.getCourse());
             }
         });
+        sortbyComplete(tasksList);
     }
 
     private void sortbyDueDate(ArrayList<Task> tasksList) {
@@ -309,6 +315,7 @@ public class TodoActivity extends AppCompatActivity{
                 return s1.getDuedate().toString().compareTo(s2.getDuedate().toString());
             }
         });
+        sortbyComplete(tasksList);
     }
 
     private void sortbyComplete(ArrayList<Task> tasksList) {
