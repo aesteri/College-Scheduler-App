@@ -136,10 +136,6 @@
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_confirmation.xml.flat",
-        "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/confirmation.xml"
-    },
-    {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
     },
