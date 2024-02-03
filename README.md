@@ -20,10 +20,12 @@ Proposal to help college students by providing a straightforward and efficient w
 * * Month view, Week view, Day view
 * Add, delete, edit Tasks
 * Add, delete, edit Courses
+* Login signup & signin system
 
 
 ## 💻 Technologies Used:
 * Android Visual Studio
 * Java, xml, Manifest
+* SQL Database
 
 
