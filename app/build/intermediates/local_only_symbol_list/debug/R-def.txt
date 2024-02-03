@@ -12,6 +12,7 @@ id allCoursesText
 id calenderRecyclerView
 id cellDayText
 id checkboxTask
+id checkboxisExam
 id classDetailsText
 id courseTask
 id datePicker
