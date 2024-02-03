@@ -38,6 +38,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
     public static int position;
     private ListView listView;
     private Button viewCourse;
+    DBCHelper DBC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
         setContentView(R.layout.activity_week_view);
         initWidgets();
         setWeekView();
+        DBC = new DBCHelper(this);
 
     }
 
@@ -210,10 +212,14 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
                         deleteButt.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                DBC.updateCourse(LoginDBActivity.currentUser, selectedClass.getLocationName(),
+                                        selectedClass.getSectionName(), selectedClass.getInstructorName(), newCourseName.getText().toString());
+
                                 selectedClass.setEventNameET(newCourseName.getText().toString());
                                 popupWindoww.dismiss();
                                 setWeekView();
                                 popupWindow.dismiss();
+
 
                             }
                         });
@@ -253,11 +259,13 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
                         deleteButt.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                DBC.deleteCourse(LoginDBActivity.currentUser, selectedClass.getLocationName(), selectedClass.getSectionName(),
+                                        selectedClass.getInstructorName(), selectedClass.getEventNameET());
                                 Events.eventsList.remove(selectedClass);
                                 setWeekView();
                                 popupWindoww.dismiss();
                                 popupWindow.dismiss();;
-                            }
+                                }
                         });
 
 

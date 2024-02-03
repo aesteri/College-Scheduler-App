@@ -141,7 +141,7 @@ public class todoEdit extends AppCompatActivity {
         if (isExam.isChecked()) {
             exam = true;
         }
-        Task newTask = new Task(taskName, taskCourse, DATEE, false, exam);
+        Task newTask = new Task(taskName, taskCourse, DATEE, false, exam, TIMEE);
         Task.tasksList.add(newTask);
         finish();
     }

@@ -5,6 +5,7 @@ import static com.example.myapplication.R.id.taskDetailsTextt;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -35,18 +37,21 @@ public class TodoActivity extends AppCompatActivity{
     private boolean duedates = false;
     private boolean complition = true;
 
+    DBTHelper DBT;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
         initWidgets();
         setTaskAdapter();
+        DBT = new DBTHelper(this);
 
 
         // DELETE THIS CHRISTIN WHEN TESTING
-        Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false, true));
-        Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false, true));
-        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false, false));
+        Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false, true, LocalTime.MIN));
+        Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false, true, LocalTime.MIN));
+        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false, false, LocalTime.MIN));
 
 
     }
@@ -122,9 +127,11 @@ public class TodoActivity extends AppCompatActivity{
                         if (isChecked) {
                             selectedTask.setComplete(true);
                             setTaskAdapter();
+                            DBT.updateComplete(LoginDBActivity.currentUser, "true", selectedTask.getName(), selectedTask.getCourse());
                             popupWindow.dismiss();
                         } else {
                             selectedTask.setComplete(false);
+                            DBT.updateComplete(LoginDBActivity.currentUser, "false", selectedTask.getName(), selectedTask.getCourse());
                             setTaskAdapter();
                             popupWindow.dismiss();
                         }
@@ -165,6 +172,7 @@ public class TodoActivity extends AppCompatActivity{
                             @Override
                             public void onClick(View v) {
                                 selectedTask.setName(newCourseName.getText().toString());
+                                DBT.updateTask(LoginDBActivity.currentUser, newCourseName.getText().toString(), selectedTask.getName(), selectedTask.getCourse());
                                 setTaskAdapter();
                                 popupWindoww.dismiss();
                                 popupWindow.dismiss();
@@ -208,6 +216,8 @@ public class TodoActivity extends AppCompatActivity{
                                 @Override
                                 public void onClick(View v) {
                                     Task.tasksList.remove(selectedTask);
+                                    DBT.deleteTask(LoginDBActivity.currentUser, selectedTask.getName(), selectedTask.getCourse(),
+                                            selectedTask.getDuedate(), selectedTask.isExam());
                                     popupWindoww.dismiss();
                                     popupWindow.dismiss();;
                                     setTaskAdapter();

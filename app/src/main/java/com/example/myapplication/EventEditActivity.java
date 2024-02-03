@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.text.BoringLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -38,6 +39,7 @@ public class EventEditActivity extends AppCompatActivity {
 
     private LocalDate DATEE;
     private LocalTime TIMEE;
+    DBCHelper DBC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class EventEditActivity extends AppCompatActivity {
         DATEE = CalendarUtils.selectedDate;
         timeButton = findViewById(R.id.timePicker);
         initWidgets();
+        DBC = new DBCHelper(this);
 
     }
 
@@ -157,6 +160,10 @@ public class EventEditActivity extends AppCompatActivity {
         boolean wedd = wed.isChecked();
         boolean thurr = thur.isChecked();
         boolean frii = fri.isChecked();
+
+        DBC.insertCourse(LoginDBActivity.currentUser, DATEE, TIMEE, eventName, instruct, sect, locat,monn, tuee,wedd,thurr,frii);
+
+
         Events newEvent = new Events(DATEE, TIMEE, eventName, instruct, sect, locat,monn, tuee, wedd, thurr, frii );
         Events.eventsList.add(newEvent);
         finish();
