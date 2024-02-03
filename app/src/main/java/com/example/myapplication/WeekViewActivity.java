@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -262,6 +264,8 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
                                 DBC.deleteCourse(LoginDBActivity.currentUser, selectedClass.getLocationName(), selectedClass.getSectionName(),
                                         selectedClass.getInstructorName(), selectedClass.getEventNameET());
                                 Events.eventsList.remove(selectedClass);
+
+
                                 setWeekView();
                                 popupWindoww.dismiss();
                                 popupWindow.dismiss();;
