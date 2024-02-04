@@ -31,6 +31,7 @@ public class todoEdit extends AppCompatActivity {
     private CheckBox isExam;
     private LocalDate DATE;
     private Button timeButton;
+    DBTHelper DBT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,8 @@ public class todoEdit extends AppCompatActivity {
         DATE = CalendarUtils.selectedDate;
         timeButton = findViewById(R.id.timeTaskButton);
         initWidgets();
+
+        DBT = new DBTHelper(this);
     }
 
     private String getTodaysDate() {
@@ -140,10 +143,16 @@ public class todoEdit extends AppCompatActivity {
         if (isExam.isChecked()) {
             Exam exam = new Exam(taskName, taskCourse, DATE, false, TIME, taskLocation);
             Task.tasksList.add(exam);
+            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, true,TIME, taskLocation);
         } else {
             Task newTask = new Task(taskName, taskCourse, DATE, false, TIME);
             Task.tasksList.add(newTask);
+            taskLocation = "";
+            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, false,TIME, taskLocation);
         }
+
+
+
         finish();
     }
 

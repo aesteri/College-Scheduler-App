@@ -3220,8 +3220,6 @@ id currentState
 id custom
 id customPanel
 id cut
-id dateNotif
-id dateNotifButton
 id datePicker
 id datePickerButton
 id dateTask
@@ -3578,7 +3576,6 @@ id textinput_prefix_text
 id textinput_suffix_text
 id thurRepeat
 id time
-id timeNotifButton
 id timePicker
 id timeTaskButton
 id title

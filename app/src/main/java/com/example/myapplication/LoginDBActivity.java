@@ -21,6 +21,7 @@ public class LoginDBActivity extends AppCompatActivity {
 
     DBHelper DB;
     DBCHelper DBC;
+    DBTHelper DBT;
     public static String currentUser;
 
     @Override
@@ -33,6 +34,7 @@ public class LoginDBActivity extends AppCompatActivity {
         btnlogin = (Button) findViewById(R.id.buttonsignIN1);
         DB = new DBHelper(this);
         DBC = new DBCHelper(this);
+        DBT = new DBTHelper(this);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,30 @@ public class LoginDBActivity extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkusernamePassword(user, pass);
                     if (checkuserpass) {
                         currentUser = user;
+
+
+                        Cursor dataTask = DBT.showTasks(currentUser);
+                        if (dataTask.getCount() == 0) {
+                            //
+                        } else {
+                            while (dataTask.moveToNext()){
+                                String name = dataTask.getString(1);
+                                String course = dataTask.getString(2);
+                                LocalDate date = LocalDate.parse(dataTask.getString(3));
+                                boolean complete = Boolean.parseBoolean(dataTask.getString(4));
+                                LocalTime time = LocalTime.parse(dataTask.getString(6));
+                                String location = dataTask.getString(7);
+                                //If task is exam...
+                                if (Boolean.parseBoolean(dataTask.getString(5))) {
+                                    Task.tasksList.add(new Exam(name, course, date, complete, time, location));
+                                } else if (!Boolean.parseBoolean(dataTask.getString(5))){
+                                    Task.tasksList.add(new Task(name, course, date, complete, time));
+                                }
+                            }
+                        }
+                        dataTask.close();
+
+
                         Cursor data = DBC.showCourses(currentUser);
                         if (data.getCount() == 0) {
                             //
@@ -64,6 +90,7 @@ public class LoginDBActivity extends AppCompatActivity {
                                 Events.eventsList.add(new Events(date, time, name, instructor,section,location,mon,tue,wed,thur,fri));
                             }
                         }
+                        data.close();
 
 
                         Toast.makeText(LoginDBActivity.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
