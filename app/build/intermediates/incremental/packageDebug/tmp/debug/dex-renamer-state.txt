@@ -1,4 +1,4 @@
-#Sat Feb 03 17:30:30 EST 2024
+#Sat Feb 03 22:15:07 EST 2024
 base.0=/Users/christianauh/AndroidStudioProjects/College-Scheduler-App/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/christianauh/AndroidStudioProjects/College-Scheduler-App/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/christianauh/AndroidStudioProjects/College-Scheduler-App/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex

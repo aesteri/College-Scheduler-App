@@ -41,6 +41,8 @@ id eventCellTV
 id eventListView
 id eventNameET
 id examNotif
+id filter
+id filterComplete
 id friRepeat
 id instructorName
 id locationName
@@ -94,8 +96,12 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string back
+string by_completion
+string by_courses
+string by_due_date
 string class_details
 string create
+string filter_by
 string fri
 string front
 string mon
@@ -103,7 +109,9 @@ string monthTV_text
 string monthly
 string new_event
 string sat
+string show_completed
 string sort
+string sort_by
 string sun
 string task
 string task_details

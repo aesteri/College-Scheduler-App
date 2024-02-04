@@ -8,8 +8,12 @@
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">My Application</string>
     <string name="back"><![CDATA[<-]]></string>
+    <string name="by_completion">BY COMPLETION</string>
+    <string name="by_courses">BY COURSES</string>
+    <string name="by_due_date">BY DUE DATE</string>
     <string name="class_details">Class Details</string>
     <string name="create">Create</string>
+    <string name="filter_by">Filter by</string>
     <string name="fri">FRI</string>
     <string name="front"><![CDATA[->]]></string>
     <string name="mon">MON</string>
@@ -17,7 +21,9 @@
     <string name="monthly">MONTHLY</string>
     <string name="new_event">New Course</string>
     <string name="sat">SAT</string>
+    <string name="show_completed">SHOW COMPLETED</string>
     <string name="sort">sort</string>
+    <string name="sort_by">Sort by</string>
     <string name="sun">SUN</string>
     <string name="task">Task</string>
     <string name="task_details">Task Details</string>

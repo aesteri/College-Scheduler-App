@@ -3291,6 +3291,8 @@ int id fill 0x7f0800d7
 int id fill_horizontal 0x7f0800d8
 int id fill_vertical 0x7f0800d9
 int id filled 0x7f0800da
+int id filter 0x7f08022c
+int id filterComplete 0x7f08022d
 int id fitCenter 0x7f0800db
 int id fitEnd 0x7f0800dc
 int id fitStart 0x7f0800dd
@@ -3879,6 +3881,9 @@ int string bottomsheet_action_expand 0x7f0f0021
 int string bottomsheet_action_expand_halfway 0x7f0f0022
 int string bottomsheet_drag_handle_clicked 0x7f0f0023
 int string bottomsheet_drag_handle_content_description 0x7f0f0024
+int string by_completion 0x7f0f00b5
+int string by_courses 0x7f0f00b6
+int string by_due_date 0x7f0f00b7
 int string character_counter_content_description 0x7f0f0025
 int string character_counter_overflowed_content_description 0x7f0f0026
 int string character_counter_pattern 0x7f0f0027
@@ -3890,6 +3895,7 @@ int string error_icon_content_description 0x7f0f002c
 int string exposed_dropdown_menu_content_description 0x7f0f002d
 int string fab_transformation_scrim_behavior 0x7f0f002e
 int string fab_transformation_sheet_behavior 0x7f0f002f
+int string filter_by 0x7f0f00b8
 int string fri 0x7f0f0030
 int string front 0x7f0f0031
 int string hide_bottom_view_on_scroll_behavior 0x7f0f0032
@@ -4009,9 +4015,11 @@ int string search_menu_title 0x7f0f00a3
 int string searchbar_scrolling_view_behavior 0x7f0f00a4
 int string searchview_clear_text_content_description 0x7f0f00a5
 int string searchview_navigation_content_description 0x7f0f00a6
+int string show_completed 0x7f0f00b9
 int string side_sheet_accessibility_pane_title 0x7f0f00a7
 int string side_sheet_behavior 0x7f0f00a8
 int string sort 0x7f0f00a9
+int string sort_by 0x7f0f00ba
 int string status_bar_notification_info_overflow 0x7f0f00aa
 int string sun 0x7f0f00ab
 int string task 0x7f0f00ac

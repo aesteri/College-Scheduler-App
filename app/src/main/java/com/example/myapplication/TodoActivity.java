@@ -5,7 +5,6 @@ import static com.example.myapplication.R.id.taskDetailsTextt;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -36,6 +35,7 @@ public class TodoActivity extends AppCompatActivity{
     private boolean coursess = false;
     private boolean duedates = false;
     private boolean complition = true;
+    private static boolean filters = true;
 
     DBTHelper DBT;
 
@@ -100,7 +100,7 @@ public class TodoActivity extends AppCompatActivity{
                     checkBox1.setVisibility(checkBox.VISIBLE);
                 }
                 cc.setText(descript);
-                Button edit =popupView.findViewById(R.id.editTask);
+                Button edit = popupView.findViewById(R.id.editTask);
 
                 Button dd = popupView.findViewById(R.id.deleteTask);
 
@@ -157,7 +157,7 @@ public class TodoActivity extends AppCompatActivity{
                         final PopupWindow popupWindoww = new PopupWindow(popupVieww, width, height, focusable);
 
                         // show the popup window
-                        // which view you pass in doesn't matter, it is only used for the window tolken
+                        // which view you pass in doesn't matter, it is only used for the window token
                         popupWindoww.showAtLocation(view, Gravity.CENTER, 0, 0);
 
                         // dismiss the popup window when touched
@@ -200,7 +200,7 @@ public class TodoActivity extends AppCompatActivity{
                             final PopupWindow popupWindoww = new PopupWindow(popupVieww, width, height, focusable);
 
                             // show the popup window
-                            // which view you pass in doesn't matter, it is only used for the window tolken
+                            // which view you pass in doesn't matter, it is only used for the window token
                             popupWindoww.showAtLocation(view, Gravity.CENTER, 0, 0);
 
                             // dismiss the popup window when touched
@@ -255,12 +255,13 @@ public class TodoActivity extends AppCompatActivity{
         Button courses = popupView.findViewById(R.id.sortCourses);
         Button dueDate = popupView.findViewById(R.id.sortDates);
         Button complete = popupView.findViewById(R.id.sortCOMPLETE);
+        Button filterComplete = popupView.findViewById(R.id.filterComplete);
 
         boolean focusable = true; // lets taps outside the popup also dismiss it
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
         // show the popup window
-        // which view you pass in doesn't matter, it is only used for the window tolken
+        // which view you pass in doesn't matter, it is only used for the window token
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         // dismiss the popup window when touched
@@ -304,6 +305,15 @@ public class TodoActivity extends AppCompatActivity{
             }
         });
 
+        filterComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filters = !filters;
+                setTaskAdapter();
+                popupWindow.dismiss();
+            }
+        });
+
     }
 
     private void sortbyCourse(ArrayList<Task> tasksList) {
@@ -317,7 +327,7 @@ public class TodoActivity extends AppCompatActivity{
     }
 
     private void sortbyDueDate(ArrayList<Task> tasksList) {
-        Collections.sort(tasksList,new Comparator<Task>() {
+        Collections.sort(tasksList, new Comparator<Task>() {
             @Override
             public int compare(Task s1, Task s2) {
                 return s1.getDuedate().toString().compareTo(s2.getDuedate().toString());
@@ -327,7 +337,7 @@ public class TodoActivity extends AppCompatActivity{
     }
 
     private void sortbyComplete(ArrayList<Task> tasksList) {
-        Collections.sort(tasksList,new Comparator<Task>() {
+        Collections.sort(tasksList, new Comparator<Task>() {
             @Override
             public int compare(Task s1, Task s2) {
                 return Boolean.compare(s1.isComplete(),s2.isComplete());
@@ -337,5 +347,9 @@ public class TodoActivity extends AppCompatActivity{
 
     public void monthlyAction(View view) {
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public static boolean getFilters() {
+        return filters;
     }
 }

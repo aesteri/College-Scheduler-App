@@ -8,45 +8,66 @@
     android:background="#62def8"
     tools:context=".TodoActivity"
     >
+
     <Button
         android:id="@+id/sortCourses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/taskDetailsTextt"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:text="BY COURSES"
+        android:text="@string/by_courses"
         android:textSize="11sp" />
+
     <Button
         android:id="@+id/sortDates"
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="BY DUEDATE"
+        android:layout_below="@id/sortCourses"
+        android:layout_centerHorizontal="true"
+        android:text="@string/by_due_date"
         android:textSize="11sp" />
 
     <Button
         android:id="@+id/sortCOMPLETE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/sortDates"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="BY COMPLETION"
+        android:text="@string/by_completion"
         android:textSize="11sp" />
 
     <TextView
         android:id="@+id/taskDetailsTextt"
         android:layout_width="wrap_content"
-        android:layout_marginTop="150dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignStart="@+id/sortCOMPLETE"
         android:layout_alignEnd="@+id/sortCOMPLETE"
-        android:text="Sort by"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/sort_by"
         android:textAlignment="center"
         android:textSize="22sp" />
 
+    <TextView
+        android:id="@+id/filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sortCOMPLETE"
+        android:layout_alignStart="@+id/sortCOMPLETE"
+        android:layout_alignEnd="@+id/sortCOMPLETE"
+        android:layout_centerHorizontal="true"
+        android:text="@string/filter_by"
+        android:textAlignment="center"
+        android:textSize="22sp" />
 
+    <Button
+        android:id="@+id/filterComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filter"
+        android:layout_centerHorizontal="true"
+        android:text="@string/show_completed"
+        android:textSize="11sp" />
 
 
 
