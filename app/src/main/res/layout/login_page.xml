@@ -27,17 +27,25 @@
         android:hint="Retype Password"
         android:layout_below="@+id/password"
         android:layout_marginTop="50dp"/>
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonsignUP"
-        android:text="Register"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/repassword"/>
-    <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/repassword"
+        android:layout_marginTop="50dp"
+        android:background="@color/lightGray"
+        android:text="Register"
+        android:textColor="@color/purple" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:id="@+id/buttonsignIN"
+        android:background="@color/lightGray"
+        android:textColor="@color/blue"
         android:text="Existing User! Sign In!"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/buttonsignUP"/>

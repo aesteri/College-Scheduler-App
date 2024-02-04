@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#62def8"
+    android:background="@color/lightBlue"
     tools:context=".TodoActivity"
     >
     <Button
@@ -14,13 +14,16 @@
         android:layout_alignParentTop="true"
         android:id="@+id/deleteTaskConfirm"
         android:text="YES"
+        android:layout_marginTop="5dp"
+        android:background="@color/lightGray"
         android:layout_centerHorizontal="true"
         android:textSize="11sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
+        android:textColor="@color/blue"
         android:text="ARE YOU SURE?"
         android:textSize="22sp" />
 

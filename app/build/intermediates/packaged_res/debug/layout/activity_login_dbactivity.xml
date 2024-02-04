@@ -21,9 +21,12 @@
         android:layout_below="@+id/username1"
         android:layout_marginTop="50dp"/>
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:id="@+id/buttonsignIN1"
+        android:textColor="@color/purple"
+        android:background="@color/lightGray"
         android:text="Sign In"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/password1"/>

@@ -3,40 +3,47 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="#62def8"
+    android:layout_width="90dp"
+    android:layout_height="200dp"
+    android:background="@color/lightBlue"
     tools:context=".TodoActivity"
     >
     <Button
         android:id="@+id/deleteTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:background="@color/lightGray"
+        android:layout_marginTop="8dp"
         android:text="DELETE"
         android:textSize="11sp" />
     <Button
         android:id="@+id/editTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/lightGray"
+        android:layout_marginTop="60dp"
         android:text="EDIT"
         android:textSize="11sp" />
 
     <CheckBox
         android:id="@+id/checkboxTask"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp" />
 
     <TextView
         android:id="@+id/taskDetailsTextt"
         android:layout_width="wrap_content"
-        android:layout_marginTop="150dp"
+        android:textAlignment="center"
+        android:layout_marginTop="140dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTask"
         android:layout_alignEnd="@+id/editTask"
+        android:textColor="@color/blue"
         android:text="@string/task_details"
         android:textSize="22sp" />
 
