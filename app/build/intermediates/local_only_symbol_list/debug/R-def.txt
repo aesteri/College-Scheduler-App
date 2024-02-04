@@ -9,8 +9,6 @@ color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id allCoursesText
-id assignNotif
-id backButton
 id buttonsignIN
 id buttonsignIN1
 id buttonsignUP
@@ -19,10 +17,7 @@ id cellDayText
 id checkboxTask
 id checkboxisExam
 id classDetailsText
-id classNotif
 id courseTask
-id dateNotif
-id dateNotifButton
 id datePicker
 id datePickerButton
 id dateTask
@@ -40,9 +35,6 @@ id editTaskNameET
 id eventCellTV
 id eventListView
 id eventNameET
-id examNotif
-id filter
-id filterComplete
 id friRepeat
 id instructorName
 id locationName
@@ -61,10 +53,8 @@ id taskCell
 id taskCellLayout
 id taskDetailsTextt
 id taskNameET
-id taskNotif
 id tasksListView
 id thurRepeat
-id timeNotifButton
 id timePicker
 id timeTaskButton
 id tueRepeat
@@ -75,7 +65,6 @@ id wedRepeat
 layout activity_event_edit
 layout activity_login_dbactivity
 layout activity_main
-layout activity_notifications
 layout activity_todo
 layout activity_week_view
 layout all_courses
@@ -96,12 +85,8 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string back
-string by_completion
-string by_courses
-string by_due_date
 string class_details
 string create
-string filter_by
 string fri
 string front
 string mon
@@ -109,9 +94,7 @@ string monthTV_text
 string monthly
 string new_event
 string sat
-string show_completed
 string sort
-string sort_by
 string sun
 string task
 string task_details

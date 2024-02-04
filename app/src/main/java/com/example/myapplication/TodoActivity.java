@@ -48,12 +48,6 @@ public class TodoActivity extends AppCompatActivity{
         DBT = new DBTHelper(this);
 
 
-        // DELETE THIS CHRISTIAN WHEN TESTING
-        Task.tasksList.add(new Exam("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false, LocalTime.MIN, "Skiles 202"));
-        Task.tasksList.add(new Exam("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false, LocalTime.MIN, "IC 103"));
-        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false, LocalTime.MIN));
-
-
     }
 
     @Override

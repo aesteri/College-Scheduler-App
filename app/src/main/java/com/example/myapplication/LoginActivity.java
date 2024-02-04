@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     DBHelper DB;
     DBCHelper DBC;
-
+    DBTHelper DBT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         signUp = (Button) findViewById(R.id.buttonsignUP);
         DB = new DBHelper(this);
         DBC = new DBCHelper(this);
+        DBT = new DBTHelper(this);
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override

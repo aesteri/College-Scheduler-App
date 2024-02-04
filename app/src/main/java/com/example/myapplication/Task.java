@@ -14,8 +14,6 @@ public class Task {
     private boolean complete;
 
     private LocalTime time;
-    DBHelper DB;
-
     public static ArrayList<Task> tasksList = new ArrayList<>();
 
     public Task(String name, String course, LocalDate duedate, boolean complete, LocalTime time) {

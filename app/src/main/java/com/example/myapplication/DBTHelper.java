@@ -20,7 +20,7 @@ public class DBTHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase MyDBT) {
         MyDBT.execSQL("create Table tasks(username TEXT primary key, name TEXT, course TEXT, duedate TEXT, complete TEXT" +
-                ", exam TEXT, time TEXT)");
+                ", exam TEXT, time TEXT, location TEXT)");
 
     }
 
@@ -29,7 +29,7 @@ public class DBTHelper extends SQLiteOpenHelper {
         MyDBT.execSQL("drop Table if exists tasks");
     }
 
-    public Boolean insertTask(String username, String name, String course, LocalDate duedate, Boolean complete, Boolean exam, LocalTime time) {
+    public Boolean insertTask(String username, String name, String course, LocalDate duedate, Boolean complete, Boolean exam, LocalTime time, String location) {
         String d = duedate.toString();
         String examString = exam.toString();
         String t = time.toString();
@@ -39,10 +39,11 @@ public class DBTHelper extends SQLiteOpenHelper {
         contentValues.put("username", username);
         contentValues.put("name", name);
         contentValues.put("course", course);
-        contentValues.put("date", d);
+        contentValues.put("duedate", d);
         contentValues.put("complete", completeString);
         contentValues.put("exam", examString);
         contentValues.put("time", t);
+        contentValues.put("location", location);
         long result = MyDBT.insert("tasks", null, contentValues);
         if (result == -1) {
             return false;
@@ -74,7 +75,7 @@ public class DBTHelper extends SQLiteOpenHelper {
         String d = duedate.toString();
         String examString = exam.toString();
         SQLiteDatabase MyDBT = this.getWritableDatabase();
-        MyDBT.delete("tasks", "username = ? and name = ? and course = ? and date = ? and exam = ?",
+        MyDBT.delete("tasks", "username = ? and name = ? and course = ? and duedate = ? and exam = ?",
                 new String[] {username, name, course, d, examString});
     }
 }
