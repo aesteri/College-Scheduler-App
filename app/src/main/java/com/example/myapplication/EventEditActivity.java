@@ -2,10 +2,15 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.BoringLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -14,7 +19,10 @@ import android.widget.RadioButton;
 import android.widget.TimePicker;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -24,6 +32,8 @@ public class EventEditActivity extends AppCompatActivity {
 
     private Button timeButton;
     private int min, hour;
+    static int reqCode = 0;
+    int cYear, cMonth, cDayOfMonth, cHourOfDay, cMinute;
 
     private EditText eventNameET;
     private EditText instructorName;
@@ -38,6 +48,8 @@ public class EventEditActivity extends AppCompatActivity {
 
     private LocalDate DATEE;
     private LocalTime TIMEE;
+    private Calendar calendar;
+    DBCHelper DBC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +61,7 @@ public class EventEditActivity extends AppCompatActivity {
         DATEE = CalendarUtils.selectedDate;
         timeButton = findViewById(R.id.timePicker);
         initWidgets();
+        DBC = new DBCHelper(this);
 
     }
 
@@ -69,6 +82,9 @@ public class EventEditActivity extends AppCompatActivity {
                 String date = makeDateString(dayOfMonth, month, year);
                 DATEE = LocalDate.of(year, month, dayOfMonth);
                 dateButton.setText(date);
+                cYear = year;
+                cMonth = month;
+                cDayOfMonth = dayOfMonth;
 
             }
         };
@@ -126,6 +142,8 @@ public class EventEditActivity extends AppCompatActivity {
                 hour = hourOfDay;
                 min = minute;
                 TIMEE = LocalTime.of(hour,min);
+                cHourOfDay = hourOfDay;
+                cMinute = minute;
                 timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, min));
             }
         };
@@ -157,6 +175,11 @@ public class EventEditActivity extends AppCompatActivity {
         boolean wedd = wed.isChecked();
         boolean thurr = thur.isChecked();
         boolean frii = fri.isChecked();
+
+
+        DBC.insertCourse(LoginDBActivity.currentUser, DATEE, TIMEE, eventName, instruct, sect, locat,monn, tuee,wedd,thurr,frii);
+
+
         Events newEvent = new Events(DATEE, TIMEE, eventName, instruct, sect, locat,monn, tuee, wedd, thurr, frii );
         Events.eventsList.add(newEvent);
         finish();

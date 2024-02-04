@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements CalenderAdapter.O
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
     }
+
+
+
+
 
     private void setMonthView() {
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
@@ -78,6 +83,5 @@ public class MainActivity extends AppCompatActivity implements CalenderAdapter.O
 
         startActivity(new Intent(this, WeekViewActivity.class));
     }
-
 
 }

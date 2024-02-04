@@ -5,34 +5,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/lightBlue"
-    tools:context=".WeekViewActivity"
+    android:background="#62def8"
+    tools:context=".TodoActivity"
     >
     <Button
-        android:id="@+id/deleteCourse"
+        android:id="@+id/deleteTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="Yes"
+        android:text="DELETE"
         android:textSize="11sp" />
     <Button
-        android:id="@+id/editCourse"
+        android:id="@+id/editTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="No"
+        android:text="EDIT"
         android:textSize="11sp" />
 
+    <CheckBox
+        android:id="@+id/checkboxTask"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
     <TextView
-        android:id="@+id/classDetailsText"
+        android:id="@+id/taskDetailsTextt"
         android:layout_width="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editCourse"
-        android:layout_alignEnd="@+id/editCourse"
-        android:textColor = "@color/blue"
-        android:text="Are you sure?"
-        android:textSize="15sp" />
+        android:layout_alignStart="@+id/editTask"
+        android:layout_alignEnd="@+id/editTask"
+        android:text="@string/task_details"
+        android:textSize="22sp" />
+
+
 
 
 

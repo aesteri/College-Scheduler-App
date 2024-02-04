@@ -8,6 +8,8 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="34" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <permission
         android:name="com.example.myapplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -28,11 +30,21 @@
         android:testOnly="true"
         android:theme="@style/Base.Theme.MyApplication" >
         <activity
-            android:name="com.example.myapplication.DailyViewActivity"
+            android:name="com.example.myapplication.LoginActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.myapplication.LoginDBActivity"
             android:exported="false" />
         <activity
             android:name="com.example.myapplication.EventEditActivity"
-            android:exported="false" />
+            android:excludeFromRecents="true"
+            android:taskAffinity="" />
         <activity
             android:name="com.example.myapplication.WeekViewActivity"
             android:exported="false" />
@@ -44,13 +56,7 @@
             android:exported="false" />
         <activity
             android:name="com.example.myapplication.MainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

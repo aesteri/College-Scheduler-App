@@ -6,6 +6,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -19,7 +20,7 @@ import java.util.Locale;
 public class todoEdit extends AppCompatActivity {
     private int min, hour;
     private DatePickerDialog datePickerDialog;
-    private LocalTime TIMEE;
+    private LocalTime TIME;
 
     private EditText name;
     private EditText location;
@@ -27,7 +28,8 @@ public class todoEdit extends AppCompatActivity {
     private LocalDate date;
     private LocalTime time;
     private Button dateButton;
-    private LocalDate DATEE;
+    private CheckBox isExam;
+    private LocalDate DATE;
     private Button timeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,7 @@ public class todoEdit extends AppCompatActivity {
         initDatePicker();
         dateButton = findViewById(R.id.dateTaskButton);
         dateButton.setText(getTodaysDate());
-        DATEE = CalendarUtils.selectedDate;
+        DATE = CalendarUtils.selectedDate;
         timeButton = findViewById(R.id.timeTaskButton);
         initWidgets();
     }
@@ -57,7 +59,7 @@ public class todoEdit extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 String date = makeDateString(dayOfMonth, month, year);
-                DATEE = LocalDate.of(year, month, dayOfMonth);
+                DATE = LocalDate.of(year, month, dayOfMonth);
                 dateButton.setText(date);
 
             }
@@ -113,7 +115,7 @@ public class todoEdit extends AppCompatActivity {
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 hour = hourOfDay;
                 min = minute;
-                TIMEE = LocalTime.of(hour,min);
+                TIME = LocalTime.of(hour,min);
                 timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, min));
             }
         };
@@ -128,14 +130,20 @@ public class todoEdit extends AppCompatActivity {
         name = findViewById(R.id.taskNameET);
         location = findViewById(R.id.locationTask);
         course = findViewById(R.id.courseTask);
+        isExam = findViewById(R.id.checkboxisExam);
     }
 
     public void saveTask(View view) {
         String taskName = name.getText().toString();
         String taskLocation = location.getText().toString();
         String taskCourse = course.getText().toString();
-        Task newTask = new Task(taskName, taskCourse, DATEE, false);
-        Task.tasksList.add(newTask);
+        if (isExam.isChecked()) {
+            Exam exam = new Exam(taskName, taskCourse, DATE, false, TIME, taskLocation);
+            Task.tasksList.add(exam);
+        } else {
+            Task newTask = new Task(taskName, taskCourse, DATE, false, TIME);
+            Task.tasksList.add(newTask);
+        }
         finish();
     }
 

@@ -21,4 +21,6 @@
     <string name="monthly">MONTHLY</string>
     <string name="daily">DAILY</string>
     <string name="view_courses">VIEW COURSES</string>
+    <string name="task">Task</string>
+    <string name="task_details">Task Details</string>
 </resources>
