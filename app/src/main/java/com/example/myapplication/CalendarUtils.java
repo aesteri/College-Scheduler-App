@@ -30,11 +30,15 @@ public class CalendarUtils {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
     }
-
+    public static String monthDayFromDate(LocalDate date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d");
+        return date.format(formatter);
+    }
     public static String timeFormattor (LocalTime time){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         return formatter.format(time);
     }
+
     public static ArrayList<LocalDate> daysInWeekArray(LocalDate selectedDate) {
         ArrayList<LocalDate> days = new ArrayList<>();
         LocalDate current = sundayForDate(selectedDate);

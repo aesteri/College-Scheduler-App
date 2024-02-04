@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="@string/monthly"
-            android:textColor="@color/blue"
+            android:text="@string/daily"
+            android:textColor="@color/purple"
             android:background="@null"
-            android:onClick="monthlyAction"
+            android:onClick="dailyAction"
             android:textStyle="bold"
             android:textSize="20sp"
             style="?android:attr/buttonBarButtonStyle" />
@@ -31,8 +31,8 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:text="@string/to_do"
-            android:textColor="@color/blue"
-            android:background="@null"
+            android:textColor="@color/white"
+            android:background="@color/lightBlue"
             android:onClick="todoActions"
             android:textStyle="bold"
             android:textSize="20sp"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/back"
-            android:textColor="@color/blue"
+            android:textColor="@color/lightBlue"
             android:background="@null"
             android:onClick="previousWeekAction"
             android:textStyle="bold"
@@ -67,7 +67,8 @@
             android:text="@string/monthTV_text"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
 
         <Button
             android:layout_width="0dp"
@@ -75,7 +76,7 @@
             android:layout_weight="1"
             android:text="@string/front"
             android:onClick="nextWeekAction"
-            android:textColor="@color/blue"
+            android:textColor="@color/lightBlue"
             android:background="@null"
             android:textStyle="bold"
             android:textSize="20sp"/>
@@ -89,12 +90,13 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/sun"
-            android:textSize="16sp"
             android:textAlignment="center"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:textStyle="italic" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -102,6 +104,7 @@
             android:text="@string/mon"
             android:textSize="16sp"
             android:textAlignment="center"
+            android:textStyle="italic"
             android:textColor="@color/gray"/>
         <TextView
             android:layout_width="0dp"
@@ -110,6 +113,7 @@
             android:text="@string/tue"
             android:textSize="16sp"
             android:textAlignment="center"
+            android:textStyle="italic"
             android:textColor="@color/gray"/>
         <TextView
             android:layout_width="0dp"
@@ -118,6 +122,7 @@
             android:text="@string/wed"
             android:textSize="16sp"
             android:textAlignment="center"
+            android:textStyle="italic"
             android:textColor="@color/gray"/>
         <TextView
             android:layout_width="0dp"
@@ -126,6 +131,7 @@
             android:text="@string/thurs"
             android:textSize="16sp"
             android:textAlignment="center"
+            android:textStyle="italic"
             android:textColor="@color/gray"/>
         <TextView
             android:layout_width="0dp"
@@ -134,6 +140,7 @@
             android:text="@string/fri"
             android:textSize="16sp"
             android:textAlignment="center"
+            android:textStyle="italic"
             android:textColor="@color/gray"/>
         <TextView
             android:layout_width="0dp"
@@ -142,6 +149,7 @@
             android:text="@string/sat"
             android:textSize="16sp"
             android:textAlignment="center"
+            android:textStyle="italic"
             android:textColor="@color/gray"/>
     </LinearLayout>
 
@@ -161,7 +169,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/view_courses"
-            android:textColor="@color/blue"
+            android:textColor="@color/lightBlue"
             android:background="@null"
             android:id="@+id/viewCourses"
             android:textStyle="bold"
@@ -173,7 +181,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/new_event"
-        android:textColor="@color/blue"
+        android:textColor="@color/lightBlue"
         android:background="@null"
         android:onClick="newEventAction"
         android:textStyle="bold"

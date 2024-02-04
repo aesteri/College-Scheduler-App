@@ -84,8 +84,4 @@ public class MainActivity extends AppCompatActivity implements CalenderAdapter.O
         startActivity(new Intent(this, WeekViewActivity.class));
     }
 
-
-//    public void notifAction(View view) {
-//        startActivity(new Intent(this, Notifications.class));
-//    }
 }
