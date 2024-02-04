@@ -24,6 +24,8 @@
     <string name="sat">SAT</string>
     <string name="sort">sort</string>
     <string name="sun">SUN</string>
+    <string name="task">Task</string>
+    <string name="task_details">Task Details</string>
     <string name="thurs">THURS</string>
     <string name="to_do">To do</string>
     <string name="to_do_list">TO DO LIST</string>

@@ -4,18 +4,23 @@
     <color name="blue">#0000FF</color>
     <color name="darkGray">#333533</color>
     <color name="gray">#888</color>
+    <color name="lightBlue">#86C7ED</color>
     <color name="lightGray">#EEE</color>
+    <color name="lightPurple">#F4EBFA</color>
+    <color name="purple">#A066CB</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">My Application</string>
     <string name="back"><![CDATA[<-]]></string>
     <string name="class_details">Class Details</string>
     <string name="create">Create</string>
+    <string name="daily">DAILY</string>
     <string name="fri">FRI</string>
     <string name="front"><![CDATA[->]]></string>
     <string name="mon">MON</string>
     <string name="monthTV_text">Jan 2024</string>
     <string name="monthly">MONTHLY</string>
     <string name="new_event">New Course</string>
+    <string name="returnButton">back</string>
     <string name="sat">SAT</string>
     <string name="sort">sort</string>
     <string name="sun">SUN</string>
@@ -29,5 +34,8 @@
     <string name="wed">WED</string>
     <string name="weekly">Weekly</string>
     <style name="Base.Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+    <style name="TimePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/lightBlue</item>
     </style>
 </resources>
