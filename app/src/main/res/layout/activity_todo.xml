@@ -28,7 +28,6 @@
             android:textSize="30sp"/>
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,13 +61,22 @@
             style="?android:attr/buttonBarButtonStyle"/>
 
     </LinearLayout>
-
     <ListView
         android:id="@+id/tasksListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:divider="@color/black"
         android:dividerHeight="2dp"
         />
-
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:onClick="returnBack"
+        android:text="@string/returnButton"
+        android:textColor="@color/black"
+        android:background="@null"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </LinearLayout>

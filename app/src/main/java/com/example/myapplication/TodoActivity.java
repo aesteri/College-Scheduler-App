@@ -40,9 +40,6 @@ public class TodoActivity extends AppCompatActivity{
 
     private ArrayList<String> getTasksList() {
         ArrayList<String> temp = new ArrayList<>();
-        temp.add("ADDD");
-        temp.add("ADD");
-        temp.add("AD");
         return temp;
     }
 
@@ -50,7 +47,9 @@ public class TodoActivity extends AppCompatActivity{
         listview = findViewById(R.id.tasksListView);
 
     }
-
+    public void returnBackToDo(View view) {
+        startActivity(new Intent(this, WeekViewActivity.class));
+    }
 
     public void createAction(View view) {
         startActivity(new Intent(this, todoEdit.class));

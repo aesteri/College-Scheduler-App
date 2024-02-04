@@ -76,6 +76,6 @@ public class HourAdapter extends ArrayAdapter<hourEvent> {
         textView.setVisibility(TextView.VISIBLE);
     }
     private void hideEvent(TextView tv) {
-        tv.setVisibility(TextView.VISIBLE);
+        tv.setVisibility(TextView.INVISIBLE);
     }
 }

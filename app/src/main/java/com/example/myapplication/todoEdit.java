@@ -118,7 +118,7 @@ public class todoEdit extends AppCompatActivity {
             }
         };
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, onTimeSetListener,hour, min, true);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,R.style.TimePickerDialogTheme, onTimeSetListener,hour, min, true);
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
     }

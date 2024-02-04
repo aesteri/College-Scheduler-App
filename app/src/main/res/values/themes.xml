@@ -2,4 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
+    <style name="TimePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/lightBlue</item>
+    </style>
 </resources>

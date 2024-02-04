@@ -189,7 +189,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
 
 
     public void monthlyAction(View view) {
-
         startActivity(new Intent(this, MainActivity.class));
     }
 

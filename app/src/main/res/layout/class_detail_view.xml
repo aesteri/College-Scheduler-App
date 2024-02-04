@@ -32,6 +32,7 @@
         android:layout_marginStart="-1dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="1dp"
+        android:textAlignment="center"
         android:text="Class Details"
         android:textColor="@color/blue"
         android:textSize="18sp" />
