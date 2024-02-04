@@ -142,7 +142,7 @@ public class todoEdit extends AppCompatActivity {
         String taskLocation = location.getText().toString();
         String taskCourse = course.getText().toString();
         if (isExam.isChecked()) {
-            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, true,TIME, taskLocation);
+            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse, DATE,false, true,TIME, taskLocation);
             Exam exam = new Exam(taskName, taskCourse, DATE, false, TIME, taskLocation);
             Task.tasksList.add(exam);
         } else {
@@ -150,8 +150,7 @@ public class todoEdit extends AppCompatActivity {
             DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, false,TIME, taskLocation);
             Task newTask = new Task(taskName, taskCourse, DATE, false, TIME);
             Task.tasksList.add(newTask);
-
-            }
+        }
 
 
 

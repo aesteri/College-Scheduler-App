@@ -50,10 +50,8 @@ public class LoginDBActivity extends AppCompatActivity {
 
 
                         Cursor dataTask = DBT.showTasks(currentUser);
-                        if (dataTask.getCount() == 0) {
-                            //
-                        } else {
-                            while (dataTask.moveToNext()){
+                        if (dataTask.moveToFirst()) {
+                            do {
                                 String name = dataTask.getString(1);
                                 String course = dataTask.getString(2);
                                 LocalDate date = LocalDate.parse(dataTask.getString(3));
@@ -63,19 +61,16 @@ public class LoginDBActivity extends AppCompatActivity {
                                 //If task is exam...
                                 if (Boolean.parseBoolean(dataTask.getString(5))) {
                                     Task.tasksList.add(new Exam(name, course, date, complete, time, location));
-                                } else {
+                                } else if (!(Boolean.parseBoolean(dataTask.getString(5)))){
                                     Task.tasksList.add(new Task(name, course, date, complete, time));
                                 }
-                            }
+                            } while (dataTask.moveToNext());
                         }
-                        dataTask.close();
 
 
                         Cursor data = DBC.showCourses(currentUser);
-                        if (data.getCount() == 0) {
-                            //
-                        } else {
-                            while (data.moveToNext()){
+                        if (data.moveToFirst()) {
+                            do {
                                 LocalDate date = LocalDate.parse(data.getString(1));
                                 LocalTime time = LocalTime.parse(data.getString(2));
                                 String name = data.getString(3);
@@ -88,10 +83,8 @@ public class LoginDBActivity extends AppCompatActivity {
                                 boolean thur = Boolean.parseBoolean(data.getString(10));
                                 boolean fri = Boolean.parseBoolean(data.getString(11));
                                 Events.eventsList.add(new Events(date, time, name, instructor,section,location,mon,tue,wed,thur,fri));
-                            }
+                            } while (data.moveToNext());
                         }
-                        data.close();
-
 
                         Toast.makeText(LoginDBActivity.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

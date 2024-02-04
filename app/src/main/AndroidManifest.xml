@@ -28,8 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".EventEditActivity"
-            android:excludeFromRecents="true"
-            android:taskAffinity="" />
+            android:exported="false" />
         <activity
             android:name=".WeekViewActivity"
             android:exported="false" />
