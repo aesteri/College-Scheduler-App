@@ -31,8 +31,12 @@ public class TodoAdapter extends ArrayAdapter<Task> {
         String taskTitle = task.getDuedate().toString() + " " + task.getName() + " " + task.getCourse();
         taskCell.setText(taskTitle);
         if (task.isComplete()) {
-            taskCell.setVisibility(taskCell.GONE);
             taskCell.setBackgroundColor(Color.GREEN);
+            if (TodoActivity.getFilters() == true) {
+                taskCell.setVisibility(taskCell.GONE);
+            } else {
+                taskCell.setVisibility(taskCell.VISIBLE);
+            }
         }
         if (!task.isComplete()) {
             taskCell.setVisibility(taskCell.VISIBLE);

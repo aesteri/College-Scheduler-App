@@ -1,130 +1,154 @@
 [
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_task_detail.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/task_detail.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_task_cell.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/task_cell.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_todo_popup.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/todo_popup.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_login_page.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/login_page.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/xml_backup_rules.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/xml/backup_rules.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_course_edit_confirm.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/course_edit_confirm.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_confirmation.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/confirmation.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_sort_popup.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/sort_popup.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_course_confirmation.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/course_confirmation.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_daily_view2.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_daily_view2.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/drawable_ic_launcher_background.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/drawable/ic_launcher_background.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_event_cell.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/event_cell.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_hour_cell.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/hour_cell.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_class_detail_view.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/class_detail_view.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_todo_create_edit.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/todo_create_edit.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_todo.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_todo.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/xml_backup_rules.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/xml/backup_rules.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_calender_cell.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/calender_cell.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_all_courses.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/all_courses.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_confirmation.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/confirmation.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/drawable_radiobuttons.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/drawable/radiobuttons.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_todo_popup.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/todo_popup.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_notifications.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_notifications.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_event_edit.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_event_edit.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_login_dbactivity.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_login_dbactivity.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_task_edit.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/task_edit.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_task_delete_confirmation.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/task_delete_confirmation.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_class_detail_view.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/class_detail_view.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-31:/drawable_radiobuttons.xml.flat",
-        "source": "com.example.myapplication.app-main-33:/drawable/radiobuttons.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_event_cell.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/event_cell.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-anydpi/ic_launcher.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/drawable/ic_launcher_foreground.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_week_view.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_week_view.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-anydpi/ic_launcher_round.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_event_edit.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_event_edit.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_main.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_main.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_week_view.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_week_view.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/xml/data_extraction_rules.xml"
+        "merged": "com.example.myapplication.app-merged_res-31:/layout_sort_popup.xml.flat",
+        "source": "com.example.myapplication.app-main-33:/layout/sort_popup.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-31:/layout_activity_event_edit.xml.flat",
-        "source": "com.example.myapplication.app-main-33:/layout/activity_event_edit.xml"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_todo_create_edit.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/todo_create_edit.xml"
     },
     {
-        "merged": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/staceyuhm/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_activity_todo.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/activity_todo.xml"
+    },
+    {
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_calender_cell.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/calender_cell.xml"
+    },
+    {
+        "merged": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_all_courses.xml.flat",
+        "source": "/Users/christianauh/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/all_courses.xml"
     }
 ]
