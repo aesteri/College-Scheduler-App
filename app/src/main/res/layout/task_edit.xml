@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#62def8"
+    android:background="@color/lightBlue"
     tools:context=".TodoActivity"
     >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
@@ -34,6 +34,7 @@
         android:layout_alignParentTop="true"
         android:id="@+id/editTaskConfirm"
         android:layout_marginTop="100dp"
+        android:background="@color/lightGray"
         android:text="YES"
         android:layout_centerHorizontal="true"
         android:textSize="11sp" />
@@ -42,6 +43,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/blue"
         android:text="ARE YOU SURE?"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"

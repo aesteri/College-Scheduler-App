@@ -3,14 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="90dp"
     android:layout_height="wrap_content"
     android:background="@color/lightBlue"
     >
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="3dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/lightGray"
         android:text="YES"
         android:textSize="11sp" />
 
@@ -19,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:textColor="@color/blue"
+        android:layout_centerHorizontal="true"
         android:text="BLANK"
         android:textSize="22sp" />
 

@@ -3159,13 +3159,11 @@ id antiClockwise
 id anticipate
 id arc
 id asConfigured
-id assignNotif
 id async
 id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id backButton
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3204,7 +3202,6 @@ id checked
 id chronometer
 id circle_center
 id classDetailsText
-id classNotif
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3228,8 +3225,6 @@ id currentState
 id custom
 id customPanel
 id cut
-id dateNotif
-id dateNotifButton
 id datePicker
 id datePickerButton
 id dateTask
@@ -3293,7 +3288,6 @@ id event3
 id eventCellTV
 id eventListView
 id eventNameET
-id examNotif
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3573,7 +3567,6 @@ id taskCell
 id taskCellLayout
 id taskDetailsTextt
 id taskNameET
-id taskNotif
 id tasksListView
 id text
 id text2
@@ -3593,7 +3586,6 @@ id textinput_prefix_text
 id textinput_suffix_text
 id thurRepeat
 id time
-id timeNotifButton
 id timePicker
 id timeTV
 id timeTaskButton
@@ -3758,7 +3750,6 @@ layout activity_daily_view2
 layout activity_event_edit
 layout activity_login_dbactivity
 layout activity_main
-layout activity_notifications
 layout activity_todo
 layout activity_week_view
 layout all_courses
