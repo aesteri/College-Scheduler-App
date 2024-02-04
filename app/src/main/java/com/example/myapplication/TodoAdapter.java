@@ -38,7 +38,7 @@ public class TodoAdapter extends ArrayAdapter<Task> {
             taskCell.setVisibility(taskCell.VISIBLE);
             taskCell.setBackgroundColor(Color.LTGRAY);
         }
-        if (task.isExam()) {
+        if (task instanceof Exam) {
             taskCell.setBackgroundColor(Color.RED);
         }
 

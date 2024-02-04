@@ -13,32 +13,23 @@ public class Task {
     private LocalDate duedate;
     private boolean complete;
 
-    private boolean isExam;
     private LocalTime time;
     DBHelper DB;
 
     public static ArrayList<Task> tasksList = new ArrayList<>();
 
-    public Task(String name, String course, LocalDate duedate, boolean complete, boolean exam, LocalTime time) {
+    public Task(String name, String course, LocalDate duedate, boolean complete, LocalTime time) {
         this.name = name;
         this.duedate = duedate;
-        this.time =time;
+        this.time = time;
         this.course = course;
         this.complete = complete;
-        this.isExam = exam;
     }
 
     public Task(){
-        this(null,null, null, false, false, null);
+        this(null,null, null, false, null);
     }
 
-    public boolean isExam() {
-        return isExam;
-    }
-
-    public void setExam(boolean exam) {
-        isExam = exam;
-    }
 
     public LocalDate getDuedate() {
         return duedate;
@@ -70,10 +61,6 @@ public class Task {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public static void main(String[] args) {
-
     }
 
     public LocalTime getTime() {return time;

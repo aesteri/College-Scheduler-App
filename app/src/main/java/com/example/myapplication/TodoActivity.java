@@ -48,10 +48,10 @@ public class TodoActivity extends AppCompatActivity{
         DBT = new DBTHelper(this);
 
 
-        // DELETE THIS CHRISTIN WHEN TESTING
-        Task.tasksList.add(new Task("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false, true, LocalTime.MIN));
-        Task.tasksList.add(new Task("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false, true, LocalTime.MIN));
-        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false, false, LocalTime.MIN));
+        // DELETE THIS CHRISTIAN WHEN TESTING
+        Task.tasksList.add(new Exam("Exam 1", "CS1332", LocalDate.of(2024, 2,11), false, LocalTime.MIN, "Skiles 202"));
+        Task.tasksList.add(new Exam("Exam 2", "CS2340", LocalDate.of(2024, 2,10), false, LocalTime.MIN, "IC 103"));
+        Task.tasksList.add(new Task("Homework 1", "CS2050", LocalDate.of(2024, 2,13), false, LocalTime.MIN));
 
 
     }
@@ -94,7 +94,7 @@ public class TodoActivity extends AppCompatActivity{
                 if (selectedTask.isComplete()) {
                     checkBox1.setChecked(true);
                 }
-                if (selectedTask.isExam()) {
+                if (selectedTask instanceof Exam) {
                     checkBox1.setVisibility(checkBox.GONE);
                 } else {
                     checkBox1.setVisibility(checkBox.VISIBLE);
@@ -217,7 +217,7 @@ public class TodoActivity extends AppCompatActivity{
                                 public void onClick(View v) {
                                     Task.tasksList.remove(selectedTask);
                                     DBT.deleteTask(LoginDBActivity.currentUser, selectedTask.getName(), selectedTask.getCourse(),
-                                            selectedTask.getDuedate(), selectedTask.isExam());
+                                            selectedTask.getDuedate(), selectedTask instanceof Exam);
                                     popupWindoww.dismiss();
                                     popupWindow.dismiss();;
                                     setTaskAdapter();
@@ -225,8 +225,6 @@ public class TodoActivity extends AppCompatActivity{
                             });
                     }
                 });
-
-
             }
         });
     }
@@ -249,24 +247,24 @@ public class TodoActivity extends AppCompatActivity{
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupVieww = inflater.inflate(R.layout.sort_popup, null);
+        View popupView = inflater.inflate(R.layout.sort_popup, null);
 
         // create the popup window
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        Button courses = popupVieww.findViewById(R.id.sortCourses);
-        Button dueDate = popupVieww.findViewById(R.id.sortDates);
-        Button complete = popupVieww.findViewById(R.id.sortCOMPLETE);
+        Button courses = popupView.findViewById(R.id.sortCourses);
+        Button dueDate = popupView.findViewById(R.id.sortDates);
+        Button complete = popupView.findViewById(R.id.sortCOMPLETE);
 
         boolean focusable = true; // lets taps outside the popup also dismiss it
-        final PopupWindow popupWindow = new PopupWindow(popupVieww, width, height, focusable);
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
         // show the popup window
         // which view you pass in doesn't matter, it is only used for the window tolken
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         // dismiss the popup window when touched
-        popupVieww.setOnTouchListener(new View.OnTouchListener() {
+        popupView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 popupWindow.dismiss();
