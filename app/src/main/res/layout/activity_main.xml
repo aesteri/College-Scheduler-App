@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:text="Notif"
+            android:text="@string/sign_out"
             android:textColor="@color/blue"
             android:background="@null"
             android:onClick="notifAction"
