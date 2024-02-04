@@ -32,6 +32,7 @@ public class todoEdit extends AppCompatActivity {
     private LocalDate DATE;
     private Button timeButton;
     DBTHelper DBT;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,15 +142,16 @@ public class todoEdit extends AppCompatActivity {
         String taskLocation = location.getText().toString();
         String taskCourse = course.getText().toString();
         if (isExam.isChecked()) {
+            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, true,TIME, taskLocation);
             Exam exam = new Exam(taskName, taskCourse, DATE, false, TIME, taskLocation);
             Task.tasksList.add(exam);
-            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, true,TIME, taskLocation);
         } else {
-            Task newTask = new Task(taskName, taskCourse, DATE, false, TIME);
-            Task.tasksList.add(newTask);
             taskLocation = "";
             DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, false,TIME, taskLocation);
-        }
+            Task newTask = new Task(taskName, taskCourse, DATE, false, TIME);
+            Task.tasksList.add(newTask);
+
+            }
 
 
 

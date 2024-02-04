@@ -63,7 +63,7 @@ public class LoginDBActivity extends AppCompatActivity {
                                 //If task is exam...
                                 if (Boolean.parseBoolean(dataTask.getString(5))) {
                                     Task.tasksList.add(new Exam(name, course, date, complete, time, location));
-                                } else if (!Boolean.parseBoolean(dataTask.getString(5))){
+                                } else {
                                     Task.tasksList.add(new Task(name, course, date, complete, time));
                                 }
                             }
