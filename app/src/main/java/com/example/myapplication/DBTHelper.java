@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class DBTHelper extends SQLiteOpenHelper {
+    //DB to store Tasks
     public static final String DBName = "Tasks.db";
     public DBTHelper(@Nullable Context context) {
         super(context, "Tasks.db", null, 1);
@@ -30,19 +31,15 @@ public class DBTHelper extends SQLiteOpenHelper {
     }
 
     public Boolean insertTask(String username, String name, String course, LocalDate duedate, Boolean complete, Boolean exam, LocalTime time, String location) {
-        String d = duedate.toString();
-        String examString = exam.toString();
-        String t = time.toString();
-        String completeString = complete.toString();
         SQLiteDatabase MyDBT = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("name", name);
         contentValues.put("course", course);
-        contentValues.put("duedate", d);
-        contentValues.put("complete", completeString);
-        contentValues.put("exam", examString);
-        contentValues.put("time", t);
+        contentValues.put("duedate", duedate.toString());
+        contentValues.put("complete", complete.toString());
+        contentValues.put("exam", exam.toString());
+        contentValues.put("time", time.toString());
         contentValues.put("location", location);
         long result = MyDBT.insert("tasks", null, contentValues);
         if (result == -1) {

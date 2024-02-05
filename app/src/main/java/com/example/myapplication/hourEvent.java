@@ -19,12 +19,4 @@ class hourEvent {
     public void setTime(LocalTime time) {
         this.time = time;
     }
-
-    public ArrayList<Events> getEvents() {
-        return events;
-    }
-
-    public void setEvents(ArrayList<Events> events) {
-        this.events = events;
-    }
 }

@@ -24,10 +24,6 @@
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/todo_create_edit.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-31:/layout_activity_login_dbactivity.xml.flat",
-        "source": "com.example.myapplication.app-main-33:/layout/activity_login_dbactivity.xml"
-    },
-    {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_login_page.xml.flat",
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/login_page.xml"
     },
@@ -58,6 +54,10 @@
     {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-anydpi_ic_launcher.xml.flat",
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-merged_res-31:/layout_todo_create_edit.xml.flat",
+        "source": "com.example.myapplication.app-main-33:/layout/todo_create_edit.xml"
     },
     {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_hour_cell.xml.flat",
@@ -134,6 +134,10 @@
     {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.myapplication.app-merged_res-31:/layout_activity_event_edit.xml.flat",
+        "source": "com.example.myapplication.app-main-33:/layout/activity_event_edit.xml"
     },
     {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",

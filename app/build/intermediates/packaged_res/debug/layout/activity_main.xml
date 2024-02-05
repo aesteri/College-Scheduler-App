@@ -47,7 +47,7 @@
             android:text="@string/sign_out"
             android:textColor="@color/purple"
             android:background="@color/lightPurple"
-            android:onClick="notifAction"
+            android:onClick="goBackLogin"
             android:textStyle="bold"
             android:textSize="20sp"
             style="?android:attr/buttonBarButtonStyle" />

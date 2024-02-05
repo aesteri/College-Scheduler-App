@@ -33,12 +33,12 @@ import java.util.ArrayList;
 
 public class WeekViewActivity extends AppCompatActivity implements CalenderAdapter.OnItemListener {
 
-    private TextView monthYearText;
+    private TextView monthYearText, classDetailsText;
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
-    public static int position;
-    private ListView listView;
-    private Button viewCourse;
+    private Events selectedClass;
+    private EditText newCourseName;
+    private Button deleteCourseBtn, editCourseBtn, deleteBtnConfirm, courseEditConfirm;
     DBCHelper DBC;
 
     @Override
@@ -47,7 +47,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
         setContentView(R.layout.activity_week_view);
         initWidgets();
         setWeekView();
-        DBC = new DBCHelper(this);
     }
 
     private void setWeekView() {
@@ -58,42 +57,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calenderAdapter);
         setEventAdapter();
-
-        viewCourse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // inflate the layout of the popup window
-                LayoutInflater inflater = (LayoutInflater)
-                        getSystemService(LAYOUT_INFLATER_SERVICE);
-                View popupView = inflater.inflate(R.layout.all_courses, null);
-
-                // create the popup window
-                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-                TextView aa = popupView.findViewById(R.id.allCoursesText);
-                String answer = "";
-                for (int i = 0; i < Events.eventsList.size(); i++) {
-                    answer += Events.eventsList.get(i).toString() + "\n";
-                }
-                aa.setText(answer);
-
-                boolean focusable = true; // lets taps outside the popup also dismiss it
-                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-                // show the popup window
-                // which view you pass in doesn't matter, it is only used for the window tolken
-                popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
-
-                // dismiss the popup window when touched
-                popupView.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        popupWindow.dismiss();
-                        return true;
-                    }
-                });
-            }
-        });
     }
 
 
@@ -101,7 +64,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
         calendarRecyclerView = findViewById(R.id.calenderRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
         eventListView = findViewById(R.id.eventListView);
-        viewCourse = findViewById(R.id.viewCourses);
+        DBC = new DBCHelper(this);
     }
 
     public void previousWeekAction(View view) {
@@ -120,11 +83,8 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
 
     @Override
     public void onItemClick(int position, LocalDate date) {
-
         CalendarUtils.selectedDate = date;
         setWeekView();
-
-
     }
 
     @Override
@@ -137,38 +97,28 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
         ArrayList<Events> dailyEvents = Events.eventsForDate(CalendarUtils.selectedDate);
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
         eventListView.setAdapter(eventAdapter);
-
+        //Create popup window whenever a Course is clicked!
         eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Events selectedClass = dailyEvents.get(position);
+                selectedClass = dailyEvents.get(position);
                 String eventTitle = selectedClass.getEventNameET() +" - "+ CalendarUtils.timeFormattor(selectedClass.getTimePicker());
                 eventTitle += "\n" + selectedClass.getInstructorName() +" - " + selectedClass.getLocationName() +" - " + selectedClass.getSectionName();
                 eventTitle += "\n" + (selectedClass.repeatedDays());
-
-
                 // inflate the layout of the popup window
                 LayoutInflater inflater = (LayoutInflater)
                         getSystemService(LAYOUT_INFLATER_SERVICE);
                 View popupView = inflater.inflate(R.layout.class_detail_view, null);
-
                 // create the popup window
                 int width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-                TextView cc = popupView.findViewById(R.id.classDetailsText);
-                cc.setText(eventTitle);
-
-                Button dd = popupView.findViewById(R.id.deleteCourse);
-                Button xx =popupView.findViewById(R.id.editCourse);
-
-
+                popupWidgets(popupView);
+                classDetailsText.setText(eventTitle);
                 boolean focusable = true; // lets taps outside the popup also dismiss it
                 final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
                 // show the popup window
                 // which view you pass in doesn't matter, it is only used for the window tolken
                 popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
                 // dismiss the popup window when touched
                 popupView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
@@ -177,102 +127,106 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
                         return true;
                     }
                 });
-                xx.setOnClickListener(new View.OnClickListener() {
+                //Btn listeners on the popup window
+                editCourseBtnListener(popupWindow);
+                deleteCourseBtnListener(popupWindow);
+
+            }
+        });
+    }
+
+    private void deleteCourseBtnListener(PopupWindow popupWindow) {
+        deleteCourseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // inflate the layout of the popup window
+                LayoutInflater inflater = (LayoutInflater)
+                        getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupVieww = inflater.inflate(R.layout.course_confirmation, null);
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                deleteBtnConfirm = popupVieww.findViewById(R.id.deleteConfirm);
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindoww = new PopupWindow(popupVieww, width, height, focusable);
+                // show the popup window
+                // which view you pass in doesn't matter, it is only used for the window tolken
+                popupWindoww.showAtLocation(popupVieww, Gravity.CENTER, 0, 0);
+                // dismiss the popup window when touched
+                popupVieww.setOnTouchListener(new View.OnTouchListener() {
                     @Override
-                    public void onClick(View v) {
-                        // inflate the layout of the popup window
-                        LayoutInflater inflater = (LayoutInflater)
-                                getSystemService(LAYOUT_INFLATER_SERVICE);
-                        View popupVieww = inflater.inflate(R.layout.course_edit_confirm, null);
-
-                        // create the popup window
-                        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-                        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-                        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText newCourseName = popupVieww.findViewById(R.id.editCourseName);
-                        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button deleteButt = popupVieww.findViewById(R.id.editConfirm);
-
-
-                        boolean focusable = true; // lets taps outside the popup also dismiss it
-                        final PopupWindow popupWindoww = new PopupWindow(popupVieww, width, height, focusable);
-
-                        // show the popup window
-                        // which view you pass in doesn't matter, it is only used for the window tolken
-                        popupWindoww.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-                        // dismiss the popup window when touched
-                        popupVieww.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                popupWindoww.dismiss();
-                                return true;
-                            }
-                        });
-                        deleteButt.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                DBC.updateCourse(LoginDBActivity.currentUser, selectedClass.getLocationName(),
-                                        selectedClass.getSectionName(), selectedClass.getInstructorName(), newCourseName.getText().toString());
-
-                                selectedClass.setEventNameET(newCourseName.getText().toString());
-                                popupWindoww.dismiss();
-                                setWeekView();
-                                popupWindow.dismiss();
-
-
-                            }
-                        });
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindoww.dismiss();
+                        return true;
                     }
                 });
-                dd.setOnClickListener(new View.OnClickListener() {
+                deleteBtnConfirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-                        // inflate the layout of the popup window
-                        LayoutInflater inflater = (LayoutInflater)
-                                getSystemService(LAYOUT_INFLATER_SERVICE);
-                        View popupVieww = inflater.inflate(R.layout.course_confirmation, null);
-
-                        // create the popup window
-                        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-                        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-                        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button deleteButt = popupVieww.findViewById(R.id.deleteConfirm);
-
-
-                        boolean focusable = true; // lets taps outside the popup also dismiss it
-                        final PopupWindow popupWindoww = new PopupWindow(popupVieww, width, height, focusable);
-
-                        // show the popup window
-                        // which view you pass in doesn't matter, it is only used for the window tolken
-                        popupWindoww.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-                        // dismiss the popup window when touched
-                        popupVieww.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                popupWindoww.dismiss();
-                                return true;
-                            }
-                        });
-
-                        deleteButt.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                DBC.deleteCourse(LoginDBActivity.currentUser, selectedClass.getLocationName(), selectedClass.getSectionName(),
-                                        selectedClass.getInstructorName(), selectedClass.getEventNameET());
-                                Events.eventsList.remove(selectedClass);
+                        //Delete course after confirmation
+                        DBC.deleteCourse(LoginDBActivity.currentUser, selectedClass.getLocationName(), selectedClass.getSectionName(),
+                                selectedClass.getInstructorName(), selectedClass.getEventNameET());
+                        Events.eventsList.remove(selectedClass);
+                        setWeekView();
+                        popupWindoww.dismiss();
+                        popupWindow.dismiss();;
+                    }
+                });
 
 
-                                setWeekView();
-                                popupWindoww.dismiss();
-                                popupWindow.dismiss();;
-                            }
-                        });
+            }
+        });
+    }
 
+    private void editCourseBtnListener(PopupWindow popupWindow) {
+        editCourseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // inflate the layout of the popup window
+                LayoutInflater inflater = (LayoutInflater)
+                        getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupVieww = inflater.inflate(R.layout.course_edit_confirm, null);
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                newCourseName = popupVieww.findViewById(R.id.editCourseName);
+                courseEditConfirm = popupVieww.findViewById(R.id.editConfirm);
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindoww = new PopupWindow(popupVieww, width, height, focusable);
 
+                // show the popup window
+                // which view you pass in doesn't matter, it is only used for the window tolken
+                popupWindoww.showAtLocation(popupVieww, Gravity.CENTER, 0, 0);
+
+                // dismiss the popup window when touched
+                popupVieww.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindoww.dismiss();
+                        return true;
+                    }
+                });
+                courseEditConfirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Update course accordingly
+                        DBC.updateCourse(LoginDBActivity.currentUser, selectedClass.getLocationName(),
+                                selectedClass.getSectionName(), selectedClass.getInstructorName(), newCourseName.getText().toString());
+
+                        selectedClass.setEventNameET(newCourseName.getText().toString());
+                        popupWindoww.dismiss();
+                        setWeekView();
+                        popupWindow.dismiss();
                     }
                 });
             }
         });
+    }
+
+    private void popupWidgets(View popupView) {
+        classDetailsText = popupView.findViewById(R.id.classDetailsText);
+        deleteCourseBtn = popupView.findViewById(R.id.deleteCourse);
+        editCourseBtn =popupView.findViewById(R.id.editCourse);
     }
 
 
@@ -288,5 +242,35 @@ public class WeekViewActivity extends AppCompatActivity implements CalenderAdapt
     public void dailyAction(View view) {
 
         startActivity(new Intent(this, DailyViewActivity.class));
+    }
+
+    public void viewAction(View view) {
+        // inflate the layout of the popup window
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.all_courses, null);
+        // create the popup window
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        TextView allCoursesTxt = popupView.findViewById(R.id.allCoursesText);
+        String answer = "";
+        for (int i = 0; i < Events.eventsList.size(); i++) {
+            answer += "\n"+Events.eventsList.get(i).toString() + "\n";
+        }
+        allCoursesTxt.setText(answer);
+        boolean focusable = true; // lets taps outside the popup also dismiss it
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window tolken
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+        // dismiss the popup window when touched
+        popupView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                popupWindow.dismiss();
+                return true;
+            }
+        });
+
     }
 }

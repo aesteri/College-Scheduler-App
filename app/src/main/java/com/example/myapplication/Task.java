@@ -6,13 +6,9 @@ import java.util.ArrayList;
 
 
 public class Task {
-    private String name;
-
-    private String course;
-
+    private String name, course;
     private LocalDate duedate;
     private boolean complete;
-
     private LocalTime time;
     public static ArrayList<Task> tasksList = new ArrayList<>();
 
@@ -33,16 +29,8 @@ public class Task {
         return duedate;
     }
 
-    public void setDuedate(LocalDate duedate) {
-        this.duedate = duedate;
-    }
-
     public String getCourse() {
         return course;
-    }
-
-    public void setCourse(String course) {
-        this.course = course;
     }
 
     public boolean isComplete() {

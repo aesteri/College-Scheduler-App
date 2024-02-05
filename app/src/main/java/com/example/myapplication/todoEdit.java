@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,30 +23,18 @@ public class todoEdit extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private LocalTime TIME;
 
-    private EditText name;
-    private EditText location;
-    private EditText course;
-    private LocalDate date;
-    private LocalTime time;
-    private Button dateButton;
+    private EditText name, location, course;
+    private Button dateButton, timeButton;
     private CheckBox isExam;
     private LocalDate DATE;
-    private Button timeButton;
     DBTHelper DBT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.todo_create_edit);
-
         initDatePicker();
-        dateButton = findViewById(R.id.dateTaskButton);
-        dateButton.setText(getTodaysDate());
-        DATE = CalendarUtils.selectedDate;
-        timeButton = findViewById(R.id.timeTaskButton);
         initWidgets();
-
-        DBT = new DBTHelper(this);
     }
 
     private String getTodaysDate() {
@@ -131,30 +120,36 @@ public class todoEdit extends AppCompatActivity {
 
 
     private void initWidgets(){
+        dateButton = findViewById(R.id.dateTaskButton);
+        dateButton.setText(getTodaysDate());
+        DATE = CalendarUtils.selectedDate;
+        timeButton = findViewById(R.id.timeTaskButton);
         name = findViewById(R.id.taskNameET);
         location = findViewById(R.id.locationTask);
         course = findViewById(R.id.courseTask);
         isExam = findViewById(R.id.checkboxisExam);
+        DBT = new DBTHelper(this);
     }
 
     public void saveTask(View view) {
-        String taskName = name.getText().toString();
-        String taskLocation = location.getText().toString();
-        String taskCourse = course.getText().toString();
-        if (isExam.isChecked()) {
-            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse, DATE,false, true,TIME, taskLocation);
-            Exam exam = new Exam(taskName, taskCourse, DATE, false, TIME, taskLocation);
-            Task.tasksList.add(exam);
+        if (TIME == null || name.getText().toString() == null || course.getText().toString()== null
+                || location.getText().toString() == null) {
+            Toast.makeText(todoEdit.this, "Please enter all fields!", Toast.LENGTH_SHORT).show();
         } else {
-            taskLocation = "";
-            DBT.insertTask(LoginDBActivity.currentUser, taskName, taskCourse,DATE,false, false,TIME, taskLocation);
-            Task newTask = new Task(taskName, taskCourse, DATE, false, TIME);
-            Task.tasksList.add(newTask);
+            if (isExam.isChecked()) {
+                DBT.insertTask(LoginDBActivity.currentUser, name.getText().toString(), course.getText().toString(), DATE,false, true,TIME, location.getText().toString());
+                Exam exam = new Exam(name.getText().toString(), course.getText().toString(), DATE, false, TIME, location.getText().toString());
+                Task.tasksList.add(exam);
+            } else {
+                DBT.insertTask(LoginDBActivity.currentUser, name.getText().toString(), course.getText().toString(),DATE,false, false,TIME, "");
+                Task newTask = new Task(name.getText().toString(), course.getText().toString(), DATE, false, TIME);
+                Task.tasksList.add(newTask);
+            }
+            finish();
         }
-
-
-
-        finish();
     }
 
+    public void backToACtion(View view) {
+        finish();
+    }
 }

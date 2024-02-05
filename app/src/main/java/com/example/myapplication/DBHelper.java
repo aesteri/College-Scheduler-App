@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class DBHelper extends SQLiteOpenHelper {
+    //DB to store usernames and passwords
 
     public static final String DBName = "Login.db";
 

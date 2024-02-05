@@ -15,11 +15,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class DBCHelper extends SQLiteOpenHelper {
+    //DB to store in Courses
     public static final String DBName = "Course.db";
     public DBCHelper(@Nullable Context context) {
         super(context, "Course.db", null, 1);
     }
-
     @Override
     public void onCreate(SQLiteDatabase MyDBC) {
         MyDBC.execSQL("create Table courses(username TEXT, date TEXT, time TEXT, name TEXT, instructor TEXT" +
@@ -30,31 +30,23 @@ public class DBCHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase MyDBC, int oldVersion, int newVersion) {
         MyDBC.execSQL("drop Table if exists courses");
     }
-
     public Boolean insertCourse(String username, LocalDate date, LocalTime time, String name,
                                 String instructor, String section, String location,
                                 Boolean mon, Boolean tue, Boolean wed, Boolean thur, Boolean fri) {
-        String d = date.toString();
-        String t = time.toString();
-        String monn = mon.toString();
-        String tuee = tue.toString();
-        String wedd = wed.toString();
-        String thurr = thur.toString();
-        String frii = fri.toString();
         SQLiteDatabase MyDBC = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
-        contentValues.put("date", d);
-        contentValues.put("time", t);
+        contentValues.put("date", date.toString());
+        contentValues.put("time", time.toString());
         contentValues.put("name", name);
         contentValues.put("instructor", instructor);
         contentValues.put("section", section);
         contentValues.put("location", location);
-        contentValues.put("mon", monn);
-        contentValues.put("tue", tuee);
-        contentValues.put("wed", wedd);
-        contentValues.put("thur", thurr);
-        contentValues.put("fri", frii);
+        contentValues.put("mon", mon.toString());
+        contentValues.put("tue", tue.toString());
+        contentValues.put("wed", wed.toString());
+        contentValues.put("thur", thur.toString());
+        contentValues.put("fri", fri.toString());
         long result = MyDBC.insert("courses", null, contentValues);
         if (result == -1) {
             return false;

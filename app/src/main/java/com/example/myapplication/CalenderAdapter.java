@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CalenderAdapter extends RecyclerView.Adapter<CalenderViewHolder>{
+    //In charge of Calendar view and how it will look
 
     private final ArrayList<LocalDate> days;
     private final OnItemListener onItemListener;

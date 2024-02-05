@@ -28,33 +28,41 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
+        initWidgets();
+        signUpClickListen();
+        signInClickListen();
+    }
 
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        repassword = (EditText) findViewById(R.id.repassword);
-        signIn = (Button) findViewById(R.id.buttonsignIN);
-        signUp = (Button) findViewById(R.id.buttonsignUP);
-        DB = new DBHelper(this);
-        DBC = new DBCHelper(this);
-        DBT = new DBTHelper(this);
+    private void signInClickListen() {
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LoginDBActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
+    private void signUpClickListen() {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
-
+                //Make sure all fields are entered
                 if (user.equals("") || pass.equals("") || repass.equals("")) {
                     Toast.makeText(LoginActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                 } else{
+                    //Make sure password and repassword are equal
                     if (pass.equals(repass)) {
                         Boolean checkuser = DB.checkusername(user);
                         if (!checkuser) {
+                            //Check if username is already in DB
                             Boolean insert = DB.insertData(user, pass);
                             if (insert) {
+                                //Registeration successful
                                 LoginDBActivity.currentUser = user;
-
                                 Toast.makeText(LoginActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);
@@ -71,14 +79,16 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
 
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LoginDBActivity.class);
-                startActivity(intent);
-            }
-        });
-
+    private void initWidgets() {
+        username = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
+        repassword = (EditText) findViewById(R.id.repassword);
+        signIn = (Button) findViewById(R.id.buttonsignIN);
+        signUp = (Button) findViewById(R.id.buttonsignUP);
+        DB = new DBHelper(this);
+        DBC = new DBCHelper(this);
+        DBT = new DBTHelper(this);
     }
 }

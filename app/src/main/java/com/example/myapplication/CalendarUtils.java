@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import kotlinx.coroutines.selects.WhileSelectKt;
 
 public class CalendarUtils {
+    //Necessary methods to utilize while setting up calendar view
     public static LocalDate selectedDate;
     public static ArrayList<LocalDate> daysInMonthArray(LocalDate date) {
         ArrayList<LocalDate> daysInMonthArray = new ArrayList<>();

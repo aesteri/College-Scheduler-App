@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -27,28 +28,16 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class EventEditActivity extends AppCompatActivity {
+    //Screen to create event
     private DatePickerDialog datePickerDialog;
-    private Button dateButton;
-
-    private Button timeButton;
+    private Button dateButton, timeButton;
     private int min, hour;
-    static int reqCode = 0;
-    int cYear, cMonth, cDayOfMonth, cHourOfDay, cMinute;
 
-    private EditText eventNameET;
-    private EditText instructorName;
-    private EditText sectionName;
-    private EditText locationName;
+    private EditText eventNameET, instructorName, sectionName, locationName;
 
-    private RadioButton mon;
-    private RadioButton tue;
-    private RadioButton wed;
-    private RadioButton thur;
-    private RadioButton fri;
-
+    private RadioButton mon, tue, wed, thur, fri;
     private LocalDate DATEE;
     private LocalTime TIMEE;
-    private Calendar calendar;
     DBCHelper DBC;
 
     @Override
@@ -56,13 +45,7 @@ public class EventEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_edit);
         initDatePicker();
-        dateButton = findViewById(R.id.datePickerButton);
-        dateButton.setText(getTodaysDate());
-        DATEE = CalendarUtils.selectedDate;
-        timeButton = findViewById(R.id.timePicker);
         initWidgets();
-        DBC = new DBCHelper(this);
-
     }
 
     private String getTodaysDate() {
@@ -70,8 +53,8 @@ public class EventEditActivity extends AppCompatActivity {
         int year = selected.getYear();
         String month = selected.getMonth().toString();
         int day = selected.getDayOfMonth();
-        String ans = month + " " + day + " " + year;
-        return ans;
+        String tDate = month + " " + day + " " + year;
+        return tDate;
     }
 
     private void initDatePicker() {
@@ -82,9 +65,6 @@ public class EventEditActivity extends AppCompatActivity {
                 String date = makeDateString(dayOfMonth, month, year);
                 DATEE = LocalDate.of(year, month, dayOfMonth);
                 dateButton.setText(date);
-                cYear = year;
-                cMonth = month;
-                cDayOfMonth = dayOfMonth;
 
             }
         };
@@ -142,12 +122,9 @@ public class EventEditActivity extends AppCompatActivity {
                 hour = hourOfDay;
                 min = minute;
                 TIMEE = LocalTime.of(hour,min);
-                cHourOfDay = hourOfDay;
-                cMinute = minute;
                 timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, min));
             }
         };
-
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, R.style.TimePickerDialogTheme, onTimeSetListener,hour, min, true);
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
@@ -163,26 +140,31 @@ public class EventEditActivity extends AppCompatActivity {
         wed = findViewById(R.id.wedRepeat);
         thur = findViewById(R.id.thurRepeat);
         fri = findViewById(R.id.friRepeat);
+        dateButton = findViewById(R.id.datePickerButton);
+        dateButton.setText(getTodaysDate());
+        DATEE = CalendarUtils.selectedDate;
+        timeButton = findViewById(R.id.timePicker);
+        DBC = new DBCHelper(this);
     }
 
     public void saveEventAction(View view) {
-        String eventName = eventNameET.getText().toString();
-        String instruct = instructorName.getText().toString();
-        String locat = locationName.getText().toString();
-        String sect = sectionName.getText().toString();
-        boolean monn = mon.isChecked();
-        boolean tuee = tue.isChecked();
-        boolean wedd = wed.isChecked();
-        boolean thurr = thur.isChecked();
-        boolean frii = fri.isChecked();
+        if (TIMEE == null || eventNameET.getText().toString() == null || instructorName.getText().toString()== null
+                || sectionName.getText().toString() == null || locationName.getText().toString() == null) {
+            Toast.makeText(EventEditActivity.this, "Please enter all fields!", Toast.LENGTH_SHORT).show();
+        } else {
+            DBC.insertCourse(LoginDBActivity.currentUser, DATEE, TIMEE, eventNameET.getText().toString(),
+                    instructorName.getText().toString(), sectionName.getText().toString(), locationName.getText().toString(),
+                    mon.isChecked(), tue.isChecked(), wed.isChecked(), thur.isChecked(), fri.isChecked());
+            Events newEvent = new Events(DATEE, TIMEE, eventNameET.getText().toString(),
+                    instructorName.getText().toString(), sectionName.getText().toString(), locationName.getText().toString(),
+                    mon.isChecked(), tue.isChecked(), wed.isChecked(), thur.isChecked(), fri.isChecked());
+            Events.eventsList.add(newEvent);
+            finish();
+        }
 
-
-        DBC.insertCourse(LoginDBActivity.currentUser, DATEE, TIMEE, eventName, instruct, sect, locat,monn, tuee,wedd,thurr,frii);
-
-
-        Events newEvent = new Events(DATEE, TIMEE, eventName, instruct, sect, locat,monn, tuee, wedd, thurr, frii );
-        Events.eventsList.add(newEvent);
-        finish();
     }
 
+    public void backToACtion(View view) {
+        finish();
+    }
 }

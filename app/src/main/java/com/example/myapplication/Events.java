@@ -69,16 +69,9 @@ public class Events {
     private LocalDate datePickerButton;
     private LocalTime timePicker;
 
-    private String eventNameET;
-    private String instructorName;
-    private String sectionName;
-    private String locationName;
+    private String eventNameET, instructorName, sectionName, locationName;
 
-    private boolean mon;
-    private boolean tue;
-    private boolean wed;
-    private boolean thur;
-    private boolean fri;
+    private boolean mon, tue, wed, thur, fri;
 
     public Events(LocalDate datePickerButton, LocalTime timePicker,String eventNameET,
                   String instructorName, String sectionName, String locationName, boolean mon,boolean tue
@@ -95,76 +88,42 @@ public class Events {
         this.thur = thur;
         this.fri = fri;
     }
-    public Events(){
-    }
     @NonNull
     @Override
     public String toString(){
-        return sectionName + " - " + CalendarUtils.timeFormattor(timePicker)
+        return eventNameET + " - " + CalendarUtils.timeFormattor(timePicker)
                 + "\n on " + datePickerButton.getDayOfWeek().toString();
     }
     public boolean isFri() {
         return fri;
     }
 
-    public void setFri(boolean fri) {
-        this.fri = fri;
-    }
-
     public boolean isThur() {
         return thur;
-    }
-
-    public void setThur(boolean thur) {
-        this.thur = thur;
     }
 
     public boolean isWed() {
         return wed;
     }
 
-    public void setWed(boolean wed) {
-        this.wed = wed;
-    }
-
     public boolean isTue() {
         return tue;
-    }
-
-    public void setTue(boolean tue) {
-        this.tue = tue;
     }
 
     public boolean isMon() {
         return mon;
     }
 
-    public void setMon(boolean mon) {
-        this.mon = mon;
-    }
-
     public String getLocationName() {
         return locationName;
-    }
-
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
     }
 
     public String getSectionName() {
         return sectionName;
     }
 
-    public void setSectionName(String sectionName) {
-        this.sectionName = sectionName;
-    }
-
     public String getInstructorName() {
         return instructorName;
-    }
-
-    public void setInstructorName(String instructorName) {
-        this.instructorName = instructorName;
     }
 
     public String getEventNameET() {
@@ -179,16 +138,8 @@ public class Events {
         return timePicker;
     }
 
-    public void setTimePicker(LocalTime timePicker) {
-        this.timePicker = timePicker;
-    }
-
     public LocalDate getDatePickerButton() {
         return datePickerButton;
-    }
-
-    public void setDatePickerButton(LocalDate datePickerButton) {
-        this.datePickerButton = datePickerButton;
     }
 
     public String repeatedDays(){
@@ -206,7 +157,4 @@ public class Events {
         }
         return answer;
     }
-
-
-
 }

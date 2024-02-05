@@ -10,13 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements CalenderAdapter.OnItemListener{
@@ -31,15 +27,9 @@ public class MainActivity extends AppCompatActivity implements CalenderAdapter.O
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
     }
-
-
-
-
-
     private void setMonthView() {
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
         ArrayList<LocalDate> daysInMonth = daysInMonthArray(CalendarUtils.selectedDate);
-
         CalenderAdapter calenderAdapter = new CalenderAdapter(daysInMonth, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
@@ -71,9 +61,6 @@ public class MainActivity extends AppCompatActivity implements CalenderAdapter.O
             CalendarUtils.selectedDate = date;
             setMonthView();
         }
-
-
-
     }
     public void todoAction(View view) {
         startActivity(new Intent(this, TodoActivity.class));
@@ -84,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements CalenderAdapter.O
         startActivity(new Intent(this, WeekViewActivity.class));
     }
 
-    public void notifAction(View view) {
+    public void goBackLogin(View view) {
         Events.eventsList.clear();
         Task.tasksList.clear();
         startActivity(new Intent(this, LoginActivity.class));
