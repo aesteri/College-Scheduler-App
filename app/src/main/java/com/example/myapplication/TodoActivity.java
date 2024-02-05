@@ -173,10 +173,9 @@ public class TodoActivity extends AppCompatActivity{
                             public void onClick(View v) {
                                 selectedTask.setName(newCourseName.getText().toString());
                                 DBT.updateTask(LoginDBActivity.currentUser, newCourseName.getText().toString(), selectedTask.getName(), selectedTask.getCourse());
-                                setTaskAdapter();
                                 popupWindoww.dismiss();
                                 popupWindow.dismiss();
-
+                                setTaskAdapter();
                             }
                         });
                     }

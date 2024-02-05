@@ -30,4 +30,6 @@
     <string name="filter_by">Filter by</string>
     <string name="show_completed">SHOW COMPLETED</string>
     <string name="sign_out">Sign out</string>
+    <string name="yes">YES</string>
+    <string name="are_you_sure">ARE YOU SURE?</string>
 </resources>

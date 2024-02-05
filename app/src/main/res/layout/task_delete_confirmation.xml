@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:id="@+id/deleteTaskConfirm"
-        android:text="YES"
+        android:text="@string/yes"
         android:layout_centerHorizontal="true"
         android:textSize="11sp" />
 
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="ARE YOU SURE?"
+        android:text="@string/are_you_sure"
         android:textSize="22sp" />
 
 

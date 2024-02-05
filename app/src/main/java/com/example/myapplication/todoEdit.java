@@ -61,7 +61,6 @@ public class todoEdit extends AppCompatActivity {
                 String date = makeDateString(dayOfMonth, month, year);
                 DATE = LocalDate.of(year, month, dayOfMonth);
                 dateButton.setText(date);
-
             }
         };
         LocalDate selected = CalendarUtils.selectedDate;
