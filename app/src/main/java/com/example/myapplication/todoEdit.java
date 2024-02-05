@@ -132,8 +132,7 @@ public class todoEdit extends AppCompatActivity {
     }
 
     public void saveTask(View view) {
-        if (TIME == null || name.getText().toString() == null || course.getText().toString()== null
-                || location.getText().toString() == null) {
+        if (TIME == null || name.getText().toString() == "" || course.getText().toString()== "") {
             Toast.makeText(todoEdit.this, "Please enter all fields!", Toast.LENGTH_SHORT).show();
         } else {
             if (isExam.isChecked()) {

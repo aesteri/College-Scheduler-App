@@ -148,8 +148,8 @@ public class EventEditActivity extends AppCompatActivity {
     }
 
     public void saveEventAction(View view) {
-        if (TIMEE == null || eventNameET.getText().toString() == null || instructorName.getText().toString()== null
-                || sectionName.getText().toString() == null || locationName.getText().toString() == null) {
+        if (TIMEE == null || eventNameET.getText().toString() == "" || instructorName.getText().toString()== ""
+                || sectionName.getText().toString() == "" || locationName.getText().toString() == "") {
             Toast.makeText(EventEditActivity.this, "Please enter all fields!", Toast.LENGTH_SHORT).show();
         } else {
             DBC.insertCourse(LoginDBActivity.currentUser, DATEE, TIMEE, eventNameET.getText().toString(),
