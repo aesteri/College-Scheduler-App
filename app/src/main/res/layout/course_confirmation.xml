@@ -5,14 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#62def8"
+    android:background="@color/lightBlue"
     tools:context=".WeekViewActivity"
     >
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
         android:layout_alignParentTop="true"
         android:id="@+id/deleteConfirm"
+        android:background="@color/lightGray"
         android:text="YES"
         android:layout_centerHorizontal="true"
         android:textSize="11sp" />
@@ -22,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="ARE YOU SURE?"
+        android:textColor="@color/blue"
         android:textSize="22sp" />
 
 

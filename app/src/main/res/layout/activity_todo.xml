@@ -19,10 +19,9 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="@string/monthly"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:background="@null"
             android:onClick="monthlyAction"
-            android:textStyle="bold"
             android:textSize="20sp"
             style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
@@ -38,7 +37,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="2"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
             android:text="@string/to_do_list"
