@@ -3175,8 +3175,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button3
 id button4
+id buttonBacktoRegister
 id buttonPanel
 id buttonsignIN
 id buttonsignIN1
@@ -4025,6 +4025,7 @@ string searchview_navigation_content_description
 string show_completed
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string sign_out
 string sort
 string sort_by
 string status_bar_notification_info_overflow

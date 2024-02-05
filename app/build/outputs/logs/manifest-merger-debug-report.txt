@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-46:12
-INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-46:12
+ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:2:1-49:12
 MERGED from [com.google.android.material:material:1.11.0] /Users/christinekim/.gradle/caches/transforms-3/0b1b1a158da0668ca4bdcd3e34d70499/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/christinekim/.gradle/caches/transforms-3/2a6e68506650abc6faf7ed06ed00b784/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/christinekim/.gradle/caches/transforms-3/306ded7b38c7bfba460aa9647dc0f275/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
@@ -60,8 +60,8 @@ ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidM
 	android:name
 		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:5:22-74
 application
-ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:6:5-45:19
-INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:6:5-45:19
+ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:6:5-48:19
+INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:6:5-48:19
 MERGED from [com.google.android.material:material:1.11.0] /Users/christinekim/.gradle/caches/transforms-3/0b1b1a158da0668ca4bdcd3e34d70499/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /Users/christinekim/.gradle/caches/transforms-3/0b1b1a158da0668ca4bdcd3e34d70499/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/christinekim/.gradle/caches/transforms-3/2a6e68506650abc6faf7ed06ed00b784/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -116,42 +116,50 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
 		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:23:27-74
+activity#com.example.myapplication.DailyViewActivity
+ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:26:9-27:39
+	android:exported
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:26:19-52
 activity#com.example.myapplication.LoginDBActivity
-ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:26:9-28:40
+ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:28:9-30:40
 	android:exported
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:28:13-37
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:30:13-37
 	android:name
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:27:13-44
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:29:13-44
 activity#com.example.myapplication.EventEditActivity
-ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:29:9-31:40
-	android:exported
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:31:13-37
+ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:31:9-34:39
+	android:excludeFromRecents
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:33:13-46
+	android:taskAffinity
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:34:13-36
 	android:name
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:30:13-46
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:32:13-46
 activity#com.example.myapplication.WeekViewActivity
-ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:32:9-34:40
-	android:exported
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:34:13-37
-	android:name
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:33:13-45
-activity#com.example.myapplication.TodoActivity
 ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:35:9-37:40
 	android:exported
 		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:36:13-41
-activity#com.example.myapplication.todoEdit
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:36:13-45
+activity#com.example.myapplication.TodoActivity
 ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:38:9-40:40
 	android:exported
 		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:40:13-37
 	android:name
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:39:13-37
-activity#com.example.myapplication.MainActivity
-ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:41:9-43:39
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:39:13-41
+activity#com.example.myapplication.todoEdit
+ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:41:9-43:40
 	android:exported
 		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:42:13-41
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:42:13-37
+activity#com.example.myapplication.MainActivity
+ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:44:9-46:39
+	android:exported
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml:45:13-41
 uses-sdk
 INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/christinekim/Documents/GitHub/Collleeege/app/src/main/AndroidManifest.xml
