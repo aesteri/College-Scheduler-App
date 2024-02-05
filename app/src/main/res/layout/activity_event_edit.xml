@@ -79,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/monRepeat"
+            android:onClick="monClickAction"
             android:layout_weight="1"
             android:textAlignment="center"
             android:textColor="@color/white"/>
@@ -96,6 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tueRepeat"
+            android:onClick="tueOnClickAction"
             android:layout_weight="1"
             android:textAlignment="center"
             android:textColor="@color/black"/>
@@ -114,6 +116,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/wedRepeat"
             android:layout_weight="1"
+            android:onClick="wedOnclick"
             android:textAlignment="center"
             android:textColor="@color/black"/>
         <TextView
@@ -131,6 +134,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/thurRepeat"
             android:layout_weight="1"
+            android:onClick="thurOnClick"
             android:textAlignment="center"
             android:textColor="@color/black"/>
         <TextView
@@ -148,7 +152,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/friRepeat"
             android:layout_weight="1"
-
+            android:onClick="friOnClick"
             android:textAlignment="center"
             android:textColor="@color/black"/>
 

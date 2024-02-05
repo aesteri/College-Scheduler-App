@@ -167,4 +167,54 @@ public class EventEditActivity extends AppCompatActivity {
     public void backToACtion(View view) {
         finish();
     }
+
+    public void monClickAction(View view) {
+        if (!mon.isSelected()) {
+            mon.setChecked(true);
+            mon.setSelected(true);
+        } else {
+            mon.setChecked(false);
+            mon.setSelected(false);
+        }
+    }
+
+    public void friOnClick(View view) {
+        if (!fri.isSelected()) {
+            fri.setChecked(true);
+            fri.setSelected(true);
+        } else {
+            fri.setChecked(false);
+            fri.setSelected(false);
+        }
+    }
+
+    public void thurOnClick(View view) {
+        if (!thur.isSelected()) {
+            thur.setChecked(true);
+            thur.setSelected(true);
+        } else {
+            thur.setChecked(false);
+            thur.setSelected(false);
+        }
+    }
+
+    public void wedOnclick(View view) {
+        if (!wed.isSelected()) {
+            wed.setChecked(true);
+            wed.setSelected(true);
+        } else {
+            wed.setChecked(false);
+            wed.setSelected(false);
+        }
+    }
+
+    public void tueOnClickAction(View view) {
+        if (!tue.isSelected()) {
+            tue.setChecked(true);
+            tue.setSelected(true);
+        } else {
+            tue.setChecked(false);
+            tue.setSelected(false);
+        }
+    }
 }

@@ -56,10 +56,6 @@
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-31:/layout_todo_create_edit.xml.flat",
-        "source": "com.example.myapplication.app-main-33:/layout/todo_create_edit.xml"
-    },
-    {
         "merged": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-merged_res-31:/layout_hour_cell.xml.flat",
         "source": "/Users/christinekim/.gradle/daemon/8.2/com.example.myapplication.app-main-33:/layout/hour_cell.xml"
     },
