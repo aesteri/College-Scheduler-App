@@ -19,10 +19,20 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="@string/monthly"
-            android:textColor="@color/blue"
-            android:background="@null"
+            android:textColor="@color/purple"
+            android:background="@color/lightPurple"
             android:onClick="monthlyAction"
-            android:textStyle="bold"
+            android:textSize="20sp"
+            style="?android:attr/buttonBarButtonStyle" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/weekly"
+            android:textColor="@color/lightPurple"
+            android:background="@color/purple"
+            android:onClick="weekAA"
             android:textSize="20sp"
             style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
@@ -38,12 +48,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="2"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
             android:text="@string/to_do_list"
             android:textAlignment="center"
-            android:textColor="@color/blue"
+            android:textColor="@color/purple"
             android:background="@null"
             android:textStyle="bold"
             android:textSize="30sp"/>
@@ -60,11 +70,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@null"
+            android:background="@color/purple"
             android:onClick="createAction"
             android:text="@string/create"
             android:textAlignment="center"
-            android:textColor="@color/lightBlue"
+            android:textColor="@color/lightPurple"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -89,15 +99,4 @@
         android:divider="@color/black"
         android:dividerHeight="2dp"
         />
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:onClick="returnBack"
-        android:text="@string/returnButton"
-        android:textColor="@color/black"
-        android:background="@null"
-        android:textSize="20sp"
-        android:textStyle="bold" />
 </LinearLayout>

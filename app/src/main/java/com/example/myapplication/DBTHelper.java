@@ -19,7 +19,7 @@ public class DBTHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase MyDBT) {
-        MyDBT.execSQL("create Table tasks(username TEXT primary key, name TEXT, course TEXT, duedate TEXT, complete TEXT" +
+        MyDBT.execSQL("create Table tasks(username TEXT, name TEXT, course TEXT, duedate TEXT, complete TEXT" +
                 ", exam TEXT, time TEXT, location TEXT)");
 
     }

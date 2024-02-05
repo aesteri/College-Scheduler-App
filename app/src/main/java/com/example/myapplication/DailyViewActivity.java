@@ -32,6 +32,7 @@ public class DailyViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_view2);
         initWidgets();
+        setDayView();
     }
 
     private void initWidgets() {
@@ -83,5 +84,9 @@ public class DailyViewActivity extends AppCompatActivity {
     }
     public void todoAction(View view) {
         startActivity(new Intent(this, TodoActivity.class));
+    }
+
+    public void montlyAction(View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

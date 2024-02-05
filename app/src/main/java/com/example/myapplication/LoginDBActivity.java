@@ -100,4 +100,8 @@ public class LoginDBActivity extends AppCompatActivity {
         });
 
     }
+
+    public void GoBackRegister(View view) {
+        startActivity(new Intent(this, LoginActivity.class));
+    }
 }

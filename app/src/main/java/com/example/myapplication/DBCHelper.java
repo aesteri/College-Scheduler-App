@@ -22,7 +22,7 @@ public class DBCHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase MyDBC) {
-        MyDBC.execSQL("create Table courses(username TEXT primary key, date TEXT, time TEXT, name TEXT, instructor TEXT" +
+        MyDBC.execSQL("create Table courses(username TEXT, date TEXT, time TEXT, name TEXT, instructor TEXT" +
                 ", section TEXT, location TEXT, mon TEXT, tue TEXT, wed TEXT, thur TEXT, fri TEXT)");
     }
 

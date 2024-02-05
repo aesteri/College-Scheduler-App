@@ -346,4 +346,8 @@ public class TodoActivity extends AppCompatActivity{
     public static boolean getFilters() {
         return filters;
     }
+
+    public void weekAA(View view) {
+        startActivity(new Intent(this, WeekViewActivity.class));
+    }
 }

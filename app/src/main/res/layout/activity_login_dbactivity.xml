@@ -31,5 +31,17 @@
         android:layout_marginTop="50dp"
         android:layout_below="@+id/password1"/>
 
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonBacktoRegister"
+        android:background="@color/purple"
+        android:textColor="@color/lightPurple"
+        android:text="Go Back"
+        android:layout_marginTop="50dp"
+        android:onClick="GoBackRegister"
+        android:layout_below="@+id/buttonsignIN1"/>
+
 
 </RelativeLayout>
