@@ -4,7 +4,7 @@ Project Assignment for CS2340 Spring 2024
 ------------------------------------------
 ⭐Christine Kim 
 ⭐Christian Auh
-⭐Stacy Uhm
+⭐Stacey Uhm
 
 ## 💁 Description
 
